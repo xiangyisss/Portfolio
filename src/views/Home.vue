@@ -1,18 +1,35 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <p class="text">
+      I'm <span class="highlight">Xiang.</span><br />
+      Front-End Developer
+    </p>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
-
 export default {
   name: "Home",
-  components: {
-    HelloWorld,
-  },
 };
 </script>
+
+<style scoped>
+.home {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  /* align-items: center; */
+}
+.text {
+  font-size: 3rem;
+  font-weight: bold;
+  /* margin-bottom: 2.5rem; */
+  letter-spacing: 0.05rem;
+  user-select: none;
+  position: absolute;
+  top: 100px;
+}
+.highlight {
+  color: antiquewhite;
+}
+</style>
