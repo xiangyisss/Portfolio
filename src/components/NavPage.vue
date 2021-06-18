@@ -1,16 +1,16 @@
 <template>
   <nav id="nav">
     <router-link :to="{ name: 'Home' }"
-      ><li @click="changeDirection">Home</li></router-link
+      ><li class="home" @click="changeDirection">Home</li></router-link
     >
     <router-link :to="{ name: 'Projects' }"
-      ><li @click="changeDirection">Projects</li></router-link
+      ><li class="project" @click="changeDirection">Projects</li></router-link
     >
     <router-link :to="{ name: 'Contact' }"
-      ><li @click="changeDirection">Contact</li></router-link
+      ><li class="contact" @click="changeDirection">Contact</li></router-link
     >
     <router-link :to="{ name: 'About' }"
-      ><li @click="changeDirection">About</li></router-link
+      ><li class="about" @click="changeDirection">About</li></router-link
     >
   </nav>
 </template>
@@ -20,7 +20,7 @@ export default {
   name: "NavigationPage",
   data() {
     return {
-      show: false,
+      menuOpened: false,
     };
   },
   mounted() {
@@ -31,21 +31,26 @@ export default {
       }, index * 600);
     });
   },
-  // methods: {
-  //   changeDirection() {
-  //     const changeXy = document.getElementById("nav");
-  //     changeXy.classList.add("change-xy");
-  //   },
-  // },
+  methods: {
+    changeDirection() {
+      const changeXy = document.getElementById("nav");
+      changeXy.classList.add("change-xy");
+      // this.$router.push(this.$router.currentRoute);
+    },
+  },
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 #nav {
-  height: 100vh;
-  width: 100%;
+  height: 100%;
+  width: 80%;
   position: absolute;
+  inset: 0;
+  margin: auto;
+  overflow: hidden;
+  /* background-color: #fff; */
 }
 
 nav,
@@ -58,6 +63,31 @@ li {
 a {
   text-decoration: none;
   color: inherit;
+  margin: 1rem;
+}
+
+.home {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.project {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.contact {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.about {
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 
 li {
@@ -65,8 +95,7 @@ li {
   font-weight: bold;
   width: 5rem;
   height: 5rem;
-  margin: 1rem;
-  border-radius: 50%;
+  /* border-radius: 50%; */
   background: white;
   color: #576777;
   opacity: 0;
@@ -81,14 +110,14 @@ li:hover {
 
 .nav-style {
   opacity: 1;
-  background: rgb(140, 226, 226);
   transform: rotate(1turn);
-  margin: 2.5rem;
-  transition: all 0.8s ease;
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-/* .change-xy {
-  display: flex;
+.change-xy {
   flex-direction: column;
-} */
+  align-items: flex-end;
+  /* transform: rotate(1turn); */
+  transition: all 0.5s ease;
+}
 </style>

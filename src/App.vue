@@ -1,7 +1,7 @@
 <template>
-  <div id="app">
+  <div id="main">
     <nav-page />
-    <router-view />
+    <router-view :key="$route.fullPath" />
   </div>
 </template>
 
@@ -36,8 +36,8 @@ body {
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+#main {
+  font-family: "Poppins", sans-serif;
   /* -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; */
   text-align: center;

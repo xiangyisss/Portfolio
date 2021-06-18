@@ -17,7 +17,7 @@ export default {
 .home {
   display: flex;
   justify-content: center;
-  position: relative;
+  /* position: relative; */
   /* align-items: center; */
 }
 .text {
@@ -27,7 +27,7 @@ export default {
   letter-spacing: 0.05rem;
   user-select: none;
   position: absolute;
-  top: 100px;
+  top: 90px;
 }
 .highlight {
   color: antiquewhite;
