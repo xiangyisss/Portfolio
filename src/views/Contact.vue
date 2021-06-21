@@ -1,15 +1,13 @@
 <template>
   <div class="contact">
     <h1 class="title">Thanks for your interest</h1>
-    <form action="" class="contact-form">
+    <form action="" class="contact-form" @submit.prevent="submit">
       <label for="name"> <input type="text" placeholder="First Name" /></label>
       <label for="company-name"
         ><input type="text" placeholder="Company Name"
       /></label>
       <label for="email"><input type="email" placeholder="Email" /></label>
-      <label for="phone-number"
-        ><input type="number" placeholder="Phone Number"
-      /></label>
+
       <label for="message">
         <textarea placeholder="Message" />
       </label>
@@ -39,20 +37,28 @@ export default {
   //     location.reload();
   //   },
   // },
+  methods: {
+    submit() {
+      location.reload();
+      alert("Your message has been recieved.");
+    },
+  },
 };
 </script>
 
 <style scoped>
 .contact {
-  position: relative;
-  z-index: 1;
+  position: absolute;
+  /* z-index: 1; */
   width: 65%;
-  margin: 0 auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   color: white;
 }
 
 .title {
-  margin-top: 8rem;
+  margin-top: 2rem;
   margin-bottom: 1.5rem;
 }
 .contact-form {

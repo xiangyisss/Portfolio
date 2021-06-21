@@ -1,28 +1,28 @@
 <template>
   <nav id="nav">
-    <router-link :to="{ name: 'Home' }"
-      ><li class="home" @click="changeDirection">Home</li></router-link
-    >
-    <router-link :to="{ name: 'Projects' }"
-      ><li class="project" @click="changeDirection">Projects</li></router-link
-    >
-    <router-link :to="{ name: 'Contact' }"
-      ><li class="contact" @click="changeDirection">Contact</li></router-link
-    >
-    <router-link :to="{ name: 'About' }"
-      ><li class="about" @click="changeDirection">About</li></router-link
-    >
+    <div class="logo">
+      <router-link :to="{ name: 'Home' }"
+        ><li class="home" @click="changeDirection">Logo</li></router-link
+      >
+    </div>
+    <div class="nav-item">
+      <router-link :to="{ name: 'Projects' }"
+        ><li class="project" @click="changeDirection">Projects</li></router-link
+      >
+      <router-link :to="{ name: 'Contact' }"
+        ><li class="contact" @click="changeDirection">Contact</li></router-link
+      >
+      <router-link :to="{ name: 'About' }"
+        ><li class="about" @click="changeDirection">About</li></router-link
+      >
+    </div>
   </nav>
 </template>
 
 <script>
 export default {
   name: "NavigationPage",
-  data() {
-    return {
-      menuOpened: false,
-    };
-  },
+
   mounted() {
     const delayMenu = document.querySelectorAll("li");
     delayMenu.forEach((el, index) => {
@@ -31,34 +31,39 @@ export default {
       }, index * 600);
     });
   },
-  methods: {
-    changeDirection() {
-      const changeXy = document.getElementById("nav");
-      changeXy.classList.add("change-xy");
-      // this.$router.push(this.$router.currentRoute);
-    },
-  },
+  // methods: {
+  //   changeDirection() {
+  //     const changeXy = document.getElementById("nav");
+  //     changeXy.classList.add("change-xy");
+  //     // this.$router.push(this.$router.currentRoute);
+  //   },
+  // },
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 #nav {
-  height: 100%;
+  height: 20%;
   width: 80%;
-  position: absolute;
-  inset: 0;
   margin: auto;
-  overflow: hidden;
-  /* background-color: #fff; */
+  display: flex;
+  justify-content: space-between;
 }
 
-nav,
-li {
+.nav-item,
+.logo {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+/* nav,
+li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
 
 a {
   text-decoration: none;
@@ -66,7 +71,7 @@ a {
   margin: 1rem;
 }
 
-.home {
+/* .home {
   position: absolute;
   top: 0;
   left: 0;
@@ -88,22 +93,21 @@ a {
   position: absolute;
   bottom: 0;
   right: 0;
-}
+} */
 
 li {
   list-style: none;
   font-weight: bold;
-  width: 5rem;
-  height: 5rem;
-  /* border-radius: 50%; */
-  background: white;
+
+  /*
+  background: white; */
   color: #576777;
-  opacity: 0;
-  user-select: none;
+  /* opacity: 0; */
+  /* user-select: none; */
 }
 
 li:hover {
-  background: #576777;
+  /* background: #576777; */
   color: rgb(231, 222, 222);
   transition: all 0.5s;
 }
@@ -114,10 +118,10 @@ li:hover {
   transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-.change-xy {
+/* .change-xy {
   flex-direction: column;
   align-items: flex-end;
-  /* transform: rotate(1turn); */
+transform: rotate(1turn);
   transition: all 0.5s ease;
-}
+}*/
 </style>

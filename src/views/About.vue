@@ -1,14 +1,15 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <h1>About me</h1>
   </div>
 </template>
 
 <style scoped>
-/* .about {
-  position: relative;
-  z-index: 1;
+.about {
+  position: absolute;
   width: 65%;
-  margin: 7rem auto 0 auto;
-} */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 </style>

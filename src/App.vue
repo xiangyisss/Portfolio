@@ -1,7 +1,8 @@
 <template>
-  <div id="main">
-    <nav-page />
-    <router-view :key="$route.fullPath" />
+  <div id="app">
+    <nav-page v-if="!'NotFound'.includes($route.name)" />
+    <!-- <nav-page v-if="!$route.meta.hideNav" /> -->
+    <router-view />
   </div>
 </template>
 
@@ -23,20 +24,24 @@ html,
 body {
   /* width: 100%; */
   height: 100vh;
-  background: #2c3e50; /* fallback for old browsers */
+  /* background: #2c3e50;
+  background: -webkit-linear-gradient(to left, #4ca1af, #2c3e50);
+  background: linear-gradient(to left, #4ca1af, #2c3e50); */
+  /* background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%); */
+  background: #56ab2f; /* fallback for old browsers */
   background: -webkit-linear-gradient(
-    to left,
-    #4ca1af,
-    #2c3e50
+    to right,
+    #a8e063,
+    #56ab2f
   ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
-    to left,
-    #4ca1af,
-    #2c3e50
+    to right,
+    #a8e063,
+    #56ab2f
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-#main {
+#app {
   font-family: "Poppins", sans-serif;
   /* -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; */

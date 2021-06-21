@@ -8,10 +8,11 @@
 export default {};
 </script>
 <style scoped>
-/* .projects {
-  position: relative;
-  z-index: 1;
+.projects {
+  position: absolute;
   width: 65%;
-  margin: 7rem auto 0 auto;
-} */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 </style>
