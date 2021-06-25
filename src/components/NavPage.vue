@@ -97,7 +97,7 @@ a {
 
 li {
   list-style: none;
-  font-weight: bold;
+  font-weight: 600;
 
   /*
   background: white; */

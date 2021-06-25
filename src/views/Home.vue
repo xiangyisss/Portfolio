@@ -1,10 +1,9 @@
 <template>
   <div class="home">
     <div class="intro">
-      <p class="text">Hello, I'm <span>Xiang.</span></p>
-      <div class="gradient-text">Front-End Developer p</div>
+      <p class="text">Hello, I'm Xiang.</p>
     </div>
-    <!-- <div class="profile-image"></div> -->
+    <div id="delay-text"></div>
   </div>
 </template>
 
@@ -12,12 +11,23 @@
 export default {
   name: "Home",
   mounted() {
-    // let introText = document.getElementsByClassName("gradient-text");
-    // console.log(introText.innnerHTML.length);
-    // introText.forEach((el, index) => {
+    let introText = document.getElementById("delay-text");
+    let text = "Front-End Developer".split("");
+    text.forEach((el, index) => {
+      setTimeout(() => {
+        let span = document.createElement("span");
+        span.innerHTML = el;
+        introText.appendChild(span);
+        introText.classList.add("gradient-text");
+      }, 80 * index++);
+      // introText.appendChild(span).style.opacity = "0.5";
+    });
+    // introText.classList.add("delay");
+
+    // introContent.split("").forEach((el, index) => {
     //   setTimeout(() => {
     //     el.classList.add("intro-style");
-    //   }, index * 200);
+    //   }, index * 2000);
     // });
   },
 };
@@ -31,17 +41,15 @@ export default {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  display: flex;
-  justify-content: space-between;
 }
 
-.intro {
+/* .intro {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
   padding: 1rem;
-}
+} */
 
 .text,
 .gradient-text {
@@ -52,29 +60,14 @@ export default {
   user-select: none;
 }
 p span {
-  color: antiquewhite;
+  color: rgb(255, 151, 15);
 }
 
-.profile-image {
-  background-image: url("../assets/profile-1.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  /* filter: blur(1px); */
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-}
+/* .delay {
+  font-size: 2rem;
+} */
 
 .gradient-text {
-  opacity: 0;
-}
-.intro-style {
-  opacity: 1;
-  transition: all 1s ease;
-}
-
-/* .gradient-text {
   background-color: #ca4246;
   background-image: linear-gradient(
     45deg,
@@ -122,5 +115,5 @@ p span {
   100% {
     background-size: 650%;
   }
-} */
+}
 </style>
