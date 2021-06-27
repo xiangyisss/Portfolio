@@ -1,19 +1,18 @@
 <template>
   <nav id="nav">
-    <div class="logo">
+    <div class="logo"></div>
+    <div class="nav-menu">
       <router-link :to="{ name: 'Home' }"
-        ><li class="home" @click="changeDirection">Logo</li></router-link
-      >
-    </div>
-    <div class="nav-item">
-      <router-link :to="{ name: 'Projects' }"
-        ><li class="project" @click="changeDirection">Projects</li></router-link
-      >
-      <router-link :to="{ name: 'Contact' }"
-        ><li class="contact" @click="changeDirection">Contact</li></router-link
+        ><div class="nav-items">Home</div></router-link
       >
       <router-link :to="{ name: 'About' }"
-        ><li class="about" @click="changeDirection">About</li></router-link
+        ><div class="nav-items">About</div></router-link
+      >
+      <router-link :to="{ name: 'Projects' }"
+        ><div class="nav-items">Projects</div></router-link
+      >
+      <router-link :to="{ name: 'Contact' }"
+        ><div class="nav-items">Contact</div></router-link
       >
     </div>
   </nav>
@@ -22,48 +21,50 @@
 <script>
 export default {
   name: "NavigationPage",
-
-  mounted() {
-    const delayMenu = document.querySelectorAll("li");
-    delayMenu.forEach((el, index) => {
-      setTimeout(() => {
-        el.classList.add("nav-style");
-      }, index * 600);
-    });
+  methods: {
+    // showMenu() {
+    //   this.show = !this.show;
+    //   if (!this.show) {
+    //     let menu = document.getElementById("nav-items");
+    //     menu.style.marginTop = "0px";
+    //     menu.style.opacity = "1";
+    //     menu.classList.add("show-menu");
+    //   }
+    // },
   },
-  // methods: {
-  //   changeDirection() {
-  //     const changeXy = document.getElementById("nav");
-  //     changeXy.classList.add("change-xy");
-  //     // this.$router.push(this.$router.currentRoute);
-  //   },
-  // },
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 #nav {
-  height: 20%;
-  width: 80%;
-  margin: auto;
+  position: fixed;
+  height: 100vh;
+  width: 40%;
   display: flex;
-  justify-content: space-between;
+  justify-content: start;
+  align-items: center;
 }
 
-.nav-item,
 .logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 350px;
+  height: 350px;
+  background-color: plum;
+  border-radius: 50%;
+  margin-left: -120px;
+  margin-right: 64px;
 }
 
-/* nav,
-li {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
+.nav-items {
+  width: 6rem;
+  height: 2rem;
+  background-color: rgb(183, 154, 212);
+  border-radius: 4px;
+  color: aliceblue;
+  text-align: left;
+  display: grid;
+  place-items: center;
+}
 
 a {
   text-decoration: none;
@@ -71,57 +72,17 @@ a {
   margin: 1rem;
 }
 
-/* .home {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.project {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-.contact {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-}
-
-.about {
-  position: absolute;
-  bottom: 0;
-  right: 0;
+/* li::after {
+  content: "";
+  width: 4px;
+  height: 2px;
+  background-color: red;
 } */
 
-li {
-  list-style: none;
-  font-weight: 600;
-
-  /*
-  background: white; */
+.nav-items:hover {
+  border: 1px solid rebeccapurple;
+  background-color: transparent;
   color: #576777;
-  /* opacity: 0; */
-  /* user-select: none; */
-}
-
-li:hover {
-  /* background: #576777; */
-  color: rgb(231, 222, 222);
   transition: all 0.5s;
 }
-
-.nav-style {
-  opacity: 1;
-  transform: rotate(1turn);
-  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-/* .change-xy {
-  flex-direction: column;
-  align-items: flex-end;
-transform: rotate(1turn);
-  transition: all 0.5s ease;
-}*/
 </style>
