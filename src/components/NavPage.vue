@@ -40,9 +40,9 @@ export default {
 #nav {
   position: fixed;
   height: 100vh;
-  width: 40%;
+  width: 30%;
   display: flex;
-  justify-content: start;
+
   align-items: center;
 }
 

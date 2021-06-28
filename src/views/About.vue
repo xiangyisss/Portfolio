@@ -1,20 +1,60 @@
 <template>
   <div class="about">
-    <div class="intro">
-      <p class="text">
-        Experienced frontend developer with solture on HTML CSS JS and Vuejs.
-        Always up for a challenge and eager to turn an idea into a working
-        system or application -XY.Sun Lorem ipsum dolor sit amet, consectetur
-        adipisicing elit. Ab non voluptatem vero laudantium! Dicta nostrum omnis
-        laboriosam eaque aliquam quaerat vero saepe cupiditate reprehenderit
-        dolorem culpa modi illo, harum facilis?
+    <div class="my-info">
+      <div class="photo"></div>
+      <h3 class="name">XiangYi Sun</h3>
+      <p class="info-text">
+        I am a frontend developer from China based in the Netherlands. I enjoy
+        turning a simple idea into a beautiful design, to then be a functional
+        application
       </p>
+    </div>
+    <div class="skill-part">
+      <img src="../assets/css-3.svg" alt="" />
+      <img src="../assets/css-3.svg" alt="" />
+      <img src="../assets/css-3.svg" alt="" />
+      <img src="../assets/css-3.svg" alt="" />
     </div>
   </div>
 </template>
 
 <style scoped>
 .about {
-  width: 50%;
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.my-info {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.my-info > *,
+.skill-part > * {
+  margin-bottom: 1rem;
+}
+
+.photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  background-image: url("../assets/profile-1.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.info-text {
+  padding: 8px;
+}
+
+.skill-part img {
+  width: 30px;
+  height: 40px;
+  display: block;
 }
 </style>

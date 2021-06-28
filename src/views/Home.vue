@@ -1,12 +1,13 @@
 <template>
   <div class="home">
-    <div id="delay-text"></div>
     <div class="intro">
+      <h1>Front-End Developer</h1>
       <p class="text">
         Experienced frontend developer with solture on HTML CSS JS and Vuejs.
         Always up for a challenge and eager to turn an idea into a working
-        system or application -XY.Sun
+        system or application
       </p>
+      <h3>X.Sun</h3>
     </div>
   </div>
 </template>
@@ -38,7 +39,15 @@ export default {
 
 <style scoped>
 .home {
-  width: 60%;
+  width: 50%;
+  /* border: 1px dotted black; */
+}
+
+.intro > * {
+  margin-bottom: 1rem;
+}
+h3 {
+  text-align: right;
 }
 /* .intro {
   display: flex;

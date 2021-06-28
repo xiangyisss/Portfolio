@@ -1,6 +1,6 @@
 <template>
   <div class="contact">
-    <!-- <h1 class="title"></h1>
+    <h1 class="title"></h1>
     <form action="" class="contact-form" @submit.prevent="submit">
       <label for="name"> <input type="text" placeholder="First Name" /></label>
       <label for="company-name"
@@ -16,13 +16,6 @@
     <div class="myaddress">
       What's App: + 31 06 123 456 <br />
       E-mail: monster@gmail.com
-    </div> -->
-    <div class="intro">
-      <p class="text">
-        Experienced frontend developer with solture on HTML CSS JS and Vuejs.
-        Always up for a challenge and eager to turn an idea into a working
-        system or application -XY.Sun
-      </p>
     </div>
   </div>
 </template>
@@ -54,6 +47,9 @@ export default {
 </script>
 
 <style scoped>
+.contact {
+  background-color: #fff;
+}
 .title {
   margin-top: 2rem;
   margin-bottom: 1.5rem;

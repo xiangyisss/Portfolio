@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div class="app">
     <!-- <nav-page v-if="!'NotFound'.includes($route.name)" /> -->
     <!-- <nav-page v-if="!$route.meta.hideNav" /> -->
     <div>
@@ -26,7 +26,7 @@ export default {
   margin: 0;
 }
 
-#app {
+.app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -37,13 +37,13 @@ export default {
 }
 
 .pages {
-  margin-left: 40%;
+  margin-left: 30%;
   padding-left: 100px;
   width: 100%;
   min-height: 100vh;
   display: flex;
   justify-content: start;
   align-items: center;
-  background-color: salmon;
+  /* background-color: salmon; */
 }
 </style>

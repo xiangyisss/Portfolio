@@ -1,12 +1,8 @@
 <template>
   <div class="projects">
-    <div class="intro">
-      <p class="text">
-        Experienced frontend developer with solture on HTML CSS JS and Vuejs.
-        Always up for a challenge and eager to turn an idea into a working
-        system or application -XY.Sun
-      </p>
-    </div>
+    <div class="work project-1"></div>
+    <div class="work project-2"></div>
+    <div class="work project-3"></div>
   </div>
 </template>
 
@@ -14,11 +10,13 @@
 export default {};
 </script>
 <style scoped>
-/* .projects {
-  position: absolute;
-  width: 65%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-} */
+.projects {
+  display: flex;
+}
+.work {
+  width: 200px;
+  height: 400px;
+  border: 2px solid steelblue;
+  margin: 20px;
+}
 </style>
