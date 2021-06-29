@@ -1,21 +1,31 @@
 <template>
   <div class="contact">
-    <h1 class="title"></h1>
-    <form action="" class="contact-form" @submit.prevent="submit">
-      <label for="name"> <input type="text" placeholder="First Name" /></label>
-      <label for="company-name"
-        ><input type="text" placeholder="Company Name"
+    <h1 class="title">Contact</h1>
+    <form action="" id="contact-form">
+      <label for="name">
+        <input type="text" placeholder="Name" v-model="form.name"
       /></label>
-      <label for="email"><input type="email" placeholder="Email" /></label>
+
+      <label for="email"
+        ><input type="email" placeholder="Email" v-model="form.email"
+      /></label>
 
       <label for="message">
-        <textarea placeholder="Message" />
+        <textarea placeholder="Message" v-model="form.message" />
       </label>
-      <input type="submit" class="submit" value="Send Messages" />
+      <button type="submit" class="submit-button" @submit.prevent="sendForm">
+        Submit your form
+      </button>
     </form>
-    <div class="myaddress">
-      What's App: + 31 06 123 456 <br />
-      E-mail: monster@gmail.com
+    <div class="mysms">
+      <div class="sms">
+        <img src="../assets/whatsapp.svg" class="whatsapp-img" />
+        + 31 06 123 456
+      </div>
+      <div class="sms">
+        <img src="../assets/linkedin.svg" class="linkedin-img" />
+        Follow me on Linkedin
+      </div>
     </div>
   </div>
 </template>
@@ -23,24 +33,23 @@
 <script>
 export default {
   name: "Contact",
-  // data() {
-  //   return {
-  //     name: "hello",
-  //     companyName: "",
-  //     email: "",
-  //     phoneNumber: "",
-  //     message: "",
-  //   };
-  // },
-  // methods: {
-  //   submit() {
-  //     location.reload();
-  //   },
-  // },
+  data() {
+    return {
+      form: {
+        name: null,
+        email: null,
+        message: null,
+      },
+    };
+  },
   methods: {
-    submit() {
-      location.reload();
-      alert("Your message has been recieved.");
+    sendForm() {
+      let contactInfo = {
+        name: this.form.name,
+        email: this.form.email,
+        message: this.form.message,
+      };
+      console.log(contactInfo);
     },
   },
 };
@@ -48,40 +57,73 @@ export default {
 
 <style scoped>
 .contact {
-  background-color: #fff;
-}
-.title {
-  margin-top: 2rem;
-  margin-bottom: 1.5rem;
-}
-.contact-form {
+  /* background-color: gold; */
+  width: 50%;
+  height: 80%;
   display: flex;
   flex-direction: column;
-  border: 1px solid snow;
-  border-radius: 5px;
-  width: 60%;
-  margin: auto;
+  align-items: center;
+  justify-content: space-around;
 }
 
-.contact-form > * {
-  margin-bottom: 0.75rem;
+.title {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+#contact-form {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
 }
 
-.contact-form input,
-.contact-form textarea {
-  border: 0;
-  outline: 0;
-  background: transparent;
-  border-bottom: 1px solid grey;
+#contact-form input,
+#contact-form textarea {
+  width: 100%;
   padding-bottom: 0.5rem;
+  padding-left: 0.25rem;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid plum;
+  margin-bottom: 1.5rem;
+  background: transparent;
+  font-size: 0.875rem;
+  font-family: "Source Serif Pro", serif;
 }
 
-.submit {
-  width: 40%;
-  height: 2rem;
-  margin: auto;
-  border: 0;
-  outline: 0;
-  border-radius: 3px;
+#contact-form textarea {
+  resize: none;
+  height: 80%;
+}
+
+.submit-button {
+  width: 60%;
+  margin: 1rem auto 0 auto;
+  padding: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: "Source Serif Pro", serif;
+  background-color: transparent;
+  border: none;
+  border: 1px solid plum;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.mysms {
+  width: 80%;
+}
+.sms {
+  /* background-color: salmon; */
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+}
+
+.sms img {
+  display: block;
+  /* width: 20px; */
+  height: 20px;
+  margin: 1rem 1rem 1rem 1rem;
 }
 </style>

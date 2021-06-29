@@ -27,23 +27,25 @@ export default {
 }
 
 .app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  /* font-family: Avenir, Helvetica, Arial, sans-serif; */
+  font-family: "Source Serif Pro", serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 14px;
+  font-size: 16px;
   color: #2c3e50;
   display: flex;
   flex-direction: row;
 }
 
 .pages {
+  /* margin-left: min(370px, 30%, 1000px); */
   margin-left: 30%;
-  padding-left: 100px;
+  padding-left: 6.25rem;
   width: 100%;
   min-height: 100vh;
   display: flex;
   justify-content: start;
   align-items: center;
-  /* background-color: salmon; */
+  /* background-color: plum; */
 }
 </style>

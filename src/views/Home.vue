@@ -39,8 +39,12 @@ export default {
 
 <style scoped>
 .home {
-  width: 50%;
-  /* border: 1px dotted black; */
+  width: 60%;
+  height: 80%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .intro > * {

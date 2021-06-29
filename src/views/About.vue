@@ -21,8 +21,9 @@
 <style scoped>
 .about {
   width: 60%;
+  height: 80%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 

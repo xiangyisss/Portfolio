@@ -42,17 +42,18 @@ export default {
   height: 100vh;
   width: 30%;
   display: flex;
-
+  justify-content: space-between;
   align-items: center;
+  /* background-color: black; */
 }
 
 .logo {
-  width: 350px;
-  height: 350px;
+  width: 18.75rem;
+  height: 18.75rem;
   background-color: plum;
-  border-radius: 50%;
+  border-radius: 100%;
   margin-left: -120px;
-  margin-right: 64px;
+  margin-right: 100px;
 }
 
 .nav-items {
