@@ -42,7 +42,7 @@ export default {
   height: 100vh;
   width: 30%;
   display: flex;
-  justify-content: space-between;
+  justify-content: start;
   align-items: center;
   /* background-color: black; */
 }
@@ -50,10 +50,20 @@ export default {
 .logo {
   width: 18.75rem;
   height: 18.75rem;
-  background-color: plum;
   border-radius: 100%;
   margin-left: -120px;
   margin-right: 100px;
+  background: #654ea3; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #eaafc8,
+    #654ea3
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #eaafc8,
+    #654ea3
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .nav-items {

@@ -27,7 +27,6 @@ export default {
 }
 
 .app {
-  /* font-family: Avenir, Helvetica, Arial, sans-serif; */
   font-family: "Source Serif Pro", serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -38,14 +37,13 @@ export default {
 }
 
 .pages {
-  /* margin-left: min(370px, 30%, 1000px); */
   margin-left: 30%;
-  padding-left: 6.25rem;
+  padding-left: 100px;
   width: 100%;
   min-height: 100vh;
   display: flex;
   justify-content: start;
   align-items: center;
-  /* background-color: plum; */
+  /* background-color: pink; */
 }
 </style>
