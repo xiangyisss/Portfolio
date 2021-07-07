@@ -56,4 +56,7 @@ h3 {
 h3 {
   text-align: right;
 }
+p {
+  user-select: none;
+}
 </style>
