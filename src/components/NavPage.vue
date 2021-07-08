@@ -23,8 +23,8 @@
     </div>
 
     <div class="wave">
-      <div class="line line1"></div>
-      <div class="line line2"></div>
+      <div class="line"></div>
+      <div class="line"></div>
     </div>
   </nav>
 </template>
@@ -79,7 +79,7 @@ export default {
   border-radius: 100%;
   margin-left: -140px;
   margin-right: 100px;
-  background: linear-gradient(193.13deg, #88a0f4 7.05%, #4560be 87.55%);
+  background: linear-gradient(193.13deg, #44a7c3 7.05%, #015871 87.55%);
   box-shadow: 0px 12px 14px rgba(0, 0, 0, 0.25);
   display: flex;
   justify-content: center;
@@ -117,10 +117,11 @@ export default {
 }
 
 .nav-items {
-  width: 6rem;
+  width: 4rem;
   height: 2rem;
-  background-color: rgb(185, 175, 194);
-  border-radius: 4px;
+  /* background-color: rgb(185, 175, 194); */
+  border-bottom: 1px solid blue;
+
   color: #262831;
   text-align: left;
   display: grid;
@@ -140,30 +141,49 @@ a {
   transition: all 0.5s;
 }
 
-.line1 {
-  position: absolute;
+.wave {
+  height: 5%;
   width: 100vw;
-  height: 650px;
-  background: linear-gradient(
-    143.65deg,
-    #88a0f4 20.14%,
-    rgba(136, 160, 244, 0) 51.8%
-  );
-  left: 100%;
-  top: 80%;
-  transform: rotate(-15deg);
-}
-.line2 {
   position: absolute;
-  width: 100vw;
-  height: 650px;
-  background: linear-gradient(
-    143.65deg,
-    #88a0f4 20.14%,
-    rgba(136, 160, 244, 0) 51.8%
-  );
-  left: 120%;
-  top: 70%;
+  bottom: 0;
+  left: 130%;
   transform: rotate(-25deg);
+  background: #015871;
+}
+
+.line {
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg)
+    repeat-x;
+  position: absolute;
+  top: -185px;
+  width: 5000px;
+  height: 187px;
+  animation: wave 7s cubic-bezier(0.16, 1.11, 0.73, 0.18) infinite;
+  transform: rotate3d(0, 0, 0);
+}
+
+.line:nth-of-type(2) {
+  top: -175px;
+  animation: wave 7s cubic-bezier(0.16, 1.11, 0.73, 0.18) -0.125s infinite,
+    swell 7s ease -1.25s infinite;
+}
+
+@keyframes wave {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -1600px;
+  }
+}
+
+@keyframes swell {
+  0%,
+  100% {
+    transform: translate3d(0, -25px, 0);
+  }
+  50% {
+    transform: translate3d(0, 5px, 0);
+  }
 }
 </style>
