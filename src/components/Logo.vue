@@ -17,7 +17,7 @@ export default {
     this.square3 = document.querySelector(".square-3");
   },
   methods: {
-    moveLogo(vertical, horizontal) {
+    moveBox(vertical, horizontal) {
       this.square1.style.transform =
         "translateY(-" + vertical + "px)  rotate(45deg)";
       this.square2.style.transform =

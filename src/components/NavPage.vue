@@ -2,17 +2,20 @@
   <nav id="nav">
     <logo ref="move" />
     <div class="nav-menu">
-      <router-link :to="{ name: 'Home' }"
-        ><div class="nav-items" @click="moveLogo">Home</div></router-link
+      <router-link :to="{ name: 'Home' }" class="nav-items" @click="moveLogo">
+        Home</router-link
       >
-      <router-link :to="{ name: 'About' }"
-        ><div class="nav-items" @click="moveLogo">About</div></router-link
+      <router-link :to="{ name: 'About' }" class="nav-items" @click="moveLogo"
+        >About</router-link
       >
-      <router-link :to="{ name: 'Projects' }"
-        ><div class="nav-items" @click="moveLogo">Projects</div></router-link
+      <router-link
+        :to="{ name: 'Projects' }"
+        class="nav-items"
+        @click="moveLogo"
+        >Projects</router-link
       >
-      <router-link :to="{ name: 'Contact' }"
-        ><div class="nav-items" @click="moveLogo">Contact</div></router-link
+      <router-link :to="{ name: 'Contact' }" class="nav-items" @click="moveLogo"
+        >Contact</router-link
       >
     </div>
 
@@ -30,7 +33,7 @@ export default {
   name: "NavigationPage",
   methods: {
     moveLogo() {
-      this.$refs.move.moveLogo(15, 5);
+      this.$refs.move.moveBox(15, 5);
     },
   },
 };
@@ -44,21 +47,11 @@ export default {
 #nav {
   position: fixed;
   height: 100vh;
-  width: 30%;
+  max-width: 30%;
   display: flex;
   justify-content: start;
   align-items: center;
-}
-
-.nav-items {
-  width: 4rem;
-  height: 2rem;
-  border-bottom: 1px solid blue;
-
-  color: #262831;
-  text-align: left;
-  display: grid;
-  place-items: center;
+  /* background-color: coral; */
 }
 
 a {
@@ -67,11 +60,26 @@ a {
   margin: 1rem;
 }
 
+.nav-items {
+  width: 5rem;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  font-weight: 500;
+  color: #262831;
+  display: block;
+  /* background-color: coral; */
+  padding-left: 0.75rem;
+}
+
 .nav-items:hover {
   border: 1px solid rebeccapurple;
   background-color: transparent;
   color: #576777;
   transition: all 0.5s;
+}
+
+.nav-menu a.active-menu {
+  border-bottom: 1px solid salmon;
 }
 
 .wave {
@@ -89,7 +97,7 @@ a {
     repeat-x;
   position: absolute;
   top: -185px;
-  width: 5000px;
+  width: 10000px;
   height: 187px;
   animation: wave 7s cubic-bezier(0.16, 1.11, 0.73, 0.18) infinite;
   transform: rotate3d(0, 0, 0);

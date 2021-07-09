@@ -41,6 +41,7 @@ const routes = [
 ];
 
 const router = createRouter({
+  linkExactActiveClass: "active-menu",
   history: createWebHistory(process.env.BASE_URL),
   routes,
 });

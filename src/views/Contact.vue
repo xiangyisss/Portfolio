@@ -118,7 +118,7 @@ export default {
   border: none;
   border-bottom: 1px solid plum;
   font-size: 0.875rem;
-  font-family: "Source Serif Pro", serif;
+  font-family: "Roboto", sans-serif;
 }
 
 #contact-form input:focus,

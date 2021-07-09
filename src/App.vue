@@ -27,7 +27,7 @@ export default {
 }
 
 .app {
-  font-family: "Source Serif Pro", serif;
+  font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 16px;
@@ -38,6 +38,7 @@ export default {
 
 .pages {
   margin-left: 30%;
+
   padding-left: 100px;
   width: 100%;
   min-height: 100vh;
