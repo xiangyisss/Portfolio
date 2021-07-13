@@ -39,7 +39,7 @@ export default {
 .pages {
   margin-left: 30%;
 
-  padding-left: 100px;
+  padding-left: 50px;
   width: 100%;
   min-height: 100vh;
   display: flex;

@@ -13,10 +13,11 @@ export default {};
 .projects {
   display: flex;
   width: 60%;
-  height: 80%;
+  /* height: 80%;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
   /* background-color: black; */
+  padding: 1rem;
 }
 .work {
   width: 100px;
@@ -25,6 +26,10 @@ export default {};
   border-radius: 16px 0px 16px 0px;
   margin: 20px;
   cursor: pointer;
+}
+
+.work:first-child {
+  margin-left: 0px;
 }
 .work:hover {
   transform: scale(1.2);

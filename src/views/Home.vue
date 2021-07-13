@@ -20,8 +20,8 @@ export default {
       items.forEach((item) => {
         delay += 0.1;
         item.style.opacity = 1;
-        item.style.transform = "translateY(-50px)";
-        item.style.transform = "translateX(-30px)";
+        item.style.transform = "translate(0px, 0px)";
+        // item.style.transform = "translateX(0px)";
         item.style.transitionDelay = delay + "s";
       });
     }, 0);
@@ -34,13 +34,13 @@ export default {
   transition: all ease-in-out 0.4s;
 }
 .home {
-  width: 50%;
+  width: 60%;
   /* height: 80%; */
-  /* display: flex;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  position: relative;
-  overflow: hidden; */
+  /* background-color: yellow; */
+  padding: 1rem;
 }
 
 .home > * {
@@ -51,7 +51,7 @@ h1,
 p,
 h3 {
   opacity: 0;
-  transform: translateY(50px);
+  transform: translate(50px, 50px);
 }
 h3 {
   text-align: right;

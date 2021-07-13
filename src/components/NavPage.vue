@@ -63,23 +63,34 @@ a {
 .nav-items {
   width: 5rem;
   height: 2.5rem;
-  line-height: 2.5rem;
+  /* line-height: 2.5rem; */
   font-weight: 500;
   color: #262831;
-  display: block;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  position: relative;
   /* background-color: coral; */
-  padding-left: 0.75rem;
+  /* padding-left: 0.75rem; */
 }
 
 .nav-items:hover {
-  border: 1px solid rebeccapurple;
-  background-color: transparent;
-  color: #576777;
-  transition: all 0.5s;
+  /* border: 1px solid rebeccapurple;
+  background-color: transparent; */
+  color: #6c7d8d;
+  padding-left: 0.25rem;
+  transition: all 0.3s;
 }
 
-.nav-menu a.active-menu {
-  border-bottom: 1px solid salmon;
+.active-menu::after {
+  /* border-bottom: 2px solid salmon; */
+  content: "";
+  width: 20px;
+  height: 2px;
+  background-color: #3994ad;
+  position: absolute;
+  bottom: 2px;
+  left: 0;
 }
 
 .wave {
@@ -88,7 +99,7 @@ a {
   position: absolute;
   bottom: 0;
   left: 130%;
-  transform: rotate(-25deg);
+  transform: rotate(-28deg);
   background: #015871;
 }
 
@@ -96,17 +107,16 @@ a {
   background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg)
     repeat-x;
   position: absolute;
-  top: -185px;
+  top: -153px;
   width: 10000px;
-  height: 187px;
-  animation: wave 7s cubic-bezier(0.16, 1.11, 0.73, 0.18) infinite;
+  height: 155px;
+  animation: wave 7s ease-in-out infinite;
   transform: rotate3d(0, 0, 0);
 }
 
 .line:nth-of-type(2) {
-  top: -175px;
-  animation: wave 7s cubic-bezier(0.16, 1.11, 0.73, 0.18) -0.125s infinite,
-    swell 7s ease -1.25s infinite;
+  top: -150px;
+  animation: wave 7s ease-in-out infinite, swell 7s ease -1.25s infinite;
 }
 
 @keyframes wave {
@@ -121,7 +131,7 @@ a {
 @keyframes swell {
   0%,
   100% {
-    transform: translate3d(0, -25px, 0);
+    transform: translate3d(0, -15px, 0);
   }
   50% {
     transform: translate3d(0, 5px, 0);

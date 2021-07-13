@@ -28,7 +28,7 @@ export default {
       information.forEach((info) => {
         delay += 0.1;
         info.style.opacity = "1";
-        info.style.transform = "translateX(-20px)";
+        info.style.transform = "translateX(0px)";
         info.style.transitionDelay = delay + "s";
       });
 
@@ -45,7 +45,7 @@ export default {
 
 <style scoped>
 * {
-  transition: all ease 0.4s;
+  transition: all ease 0.3s;
 }
 .about {
   width: 60%;
@@ -56,6 +56,7 @@ export default {
   /* background-color: green; */
   display: grid;
   grid-template-columns: 2fr 1fr;
+  padding: 1rem;
 }
 
 .my-info {
@@ -98,7 +99,7 @@ export default {
 
 .info {
   opacity: 0;
-  transform: translateX(20px);
+  transform: translateX(50px);
 }
 
 .skill-part img {

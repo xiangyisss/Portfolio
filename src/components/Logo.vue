@@ -35,6 +35,9 @@ export default {
 </script>
 
 <style scoped>
+* {
+  transition: all cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.3s;
+}
 .logo {
   width: 18.75rem;
   height: 18.75rem;
