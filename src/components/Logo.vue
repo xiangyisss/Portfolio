@@ -39,30 +39,32 @@ export default {
   transition: all cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.3s;
 }
 .logo {
-  width: 18.75rem;
-  height: 18.75rem;
+  /* width: 18.75rem;
+  height: 18.75rem; */
+  width: 3rem;
+  height: 3rem;
   border-radius: 100%;
-  margin-left: -140px;
-  margin-right: 100px;
+  margin-left: 20px;
   background: linear-gradient(193.13deg, #44a7c3 7.05%, #015871 87.55%);
-  box-shadow: 0px 12px 14px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
   display: flex;
   justify-content: center;
   align-items: center;
   padding-left: 40px;
-}
-
-.big-square {
   position: relative;
 }
 
 .square-1,
 .square-2 {
-  width: 7.5rem;
-  height: 7.5rem;
+  width: 0.8rem;
+  height: 0.8rem;
   background-color: rgb(246, 246, 248);
   transform: rotate(45deg);
   box-shadow: 0px 12px 14px rgba(0, 0, 0, 0.25);
+  position: absolute;
+  /* right: 10px; */
+  top: 35%;
+  left: 30%;
 }
 
 .square-1 {
@@ -74,10 +76,12 @@ export default {
 }
 
 .square-3 {
-  width: 5rem;
-  height: 5rem;
+  width: 0.6rem;
+  height: 0.6rem;
   background-color: rgb(246, 246, 248);
   transform: rotate(45deg);
-  box-shadow: 0px 12px 14px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  position: absolute;
+  left: 60%;
 }
 </style>

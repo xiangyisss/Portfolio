@@ -1,12 +1,16 @@
 <template>
   <div class="home">
-    <h1 class="item">Front-End Developer</h1>
-    <p class="item">
+    <h1 class="item name">XiangYi Sun.</h1>
+    <h2 class="item front-end">Front-End Developer</h2>
+    <p class="item describ">
       Experienced frontend developer with solture on HTML CSS JS and Vuejs.
       Always up for a challenge and eager to turn an idea into a working system
-      or application
+      or application.
     </p>
-    <h3 class="item">X.Sun</h3>
+
+    <router-link :to="{ name: 'Contact' }">
+      <h3 class="item contact">Contact me</h3>
+    </router-link>
   </div>
 </template>
 
@@ -43,20 +47,47 @@ export default {
   padding: 1rem;
 }
 
-.home > * {
-  margin-bottom: 2.5rem;
+.item:not(.describ) {
+  margin-bottom: 0.75rem;
 }
 
-h1,
-p,
-h3 {
+.name {
+  font-size: 60px;
+  font-weight: 800;
+}
+.front-end {
+  font-size: 58px;
+  color: #344a5f;
+  font-weight: 700;
+}
+.describ {
+  font-size: 18px;
+  font-weight: 500;
+  color: #344a5f;
+  margin: 1rem 0 3rem 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  width: 140px;
+  height: 50px;
+}
+
+.contact {
+  width: 140px;
+  height: 50px;
+  text-align: center;
+  border: 2px solid #44cfcb;
+  color: #44cfcb;
+  border-radius: 4px;
+  background-color: trasparent;
+  line-height: 50px;
+}
+
+.item {
   opacity: 0;
   transform: translate(50px, 50px);
-}
-h3 {
-  text-align: right;
-}
-p {
   user-select: none;
 }
 </style>

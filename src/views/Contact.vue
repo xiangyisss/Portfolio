@@ -1,50 +1,50 @@
 <template>
-  <div class="contact">
+  <div class="contact-page">
     <div id="title">
-      <h1 class="title contact-info">Contact</h1>
+      <h1 class="contact-info">Contact</h1>
     </div>
-    <form action="" id="contact-form" class="contact-info" autocomplete="off">
-      <div class="name-section">
+    <form action="" class="contact-info" autocomplete="off">
+      <!-- <div class="name-section">
         <input type="text" v-model="form.name" required />
         <label for="name" class="label-name">
           <span class="content-name">Name</span>
         </label>
       </div>
 
-      <!-- <label for="name" class="label-name">
-        <input type="text" name="Name" v-model="form.name" />
-        <span>Name</span>
-      </label> -->
-      <!-- 
-      <label for="email">
-        <span>Email</span>
-        <input type="email" v-model="form.email" />
+      <div class="email-section">
+        <input type="text" v-model="form.email" required />
+        <label for="email" class="label-name">
+          <span class="content-name">E-mail</span>
+        </label>
+      </div>
+
+      <div class="message-section">
+        <textarea type="text" v-model="form.message" required />
+        <label for="message" class="message-name">
+          <span class="content-name">Your message</span>
+        </label>
+      </div> -->
+
+      <label for="name" class="label-name">
+        <input type="text" name="Name" v-model="form.name" required />
+        <span class="content-name">Name</span>
       </label>
 
-      <label for="subject">
-        <span>Subject</span>
-        <input type="text" v-model="form.subject" />
+      <label for="email">
+        <input type="email" v-model="form.email" required />
+        <span class="content-name">Email</span>
       </label>
 
       <label for="message">
-        <span>Your message</span>
-        <textarea v-model="form.message" />
+        <textarea v-model="form.message" required />
+        <span class="content-name">Message</span>
       </label>
-      <button type="submit" class="submit-button" @submit.prevent="sendForm">
-        Submit your form
-      </button> -->
+      <div class="button">
+        <button type="submit" class="submit-button" @submit.prevent="sendForm">
+          Submit
+        </button>
+      </div>
     </form>
-
-    <!-- <div class="mysms contact-info">
-      <div class="sms">
-        <img src="../assets/whatsapp.svg" class="whatsapp-img" />
-        + 31 06 123 456
-      </div>
-      <div class="sms">
-        <img src="../assets/linkedIn.svg" class="linkedin-img" />
-        Follow me on Linkedin
-      </div>
-    </div> -->
   </div>
 </template>
 
@@ -56,7 +56,6 @@ export default {
       form: {
         name: null,
         email: null,
-        subject: null,
         message: null,
       },
     };
@@ -66,7 +65,6 @@ export default {
       let contactInfo = {
         name: this.form.name,
         email: this.form.email,
-        subject: this.form.subject,
         message: this.form.message,
       };
       console.log(contactInfo);
@@ -102,132 +100,83 @@ export default {
 </script>
 
 <style scoped>
-.name-section {
-  width: 100%;
-  height: 50px;
-  position: relative;
-  overflow: hidden;
-}
-
-form input {
-  width: 100%;
-  height: 100%;
-  padding-top: 20px;
-  border: none;
-  outline: none;
-}
-
-form label {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  border-bottom: 1px solid rgb(63, 62, 62);
-}
-
-form label::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-bottom: 3px solid #44a7c3;
-  left: 0;
-  bottom: -1px;
-  transform: translateX(-100%);
-  transition: transform 0.3s ease-in;
-}
-
-.content-name {
-  position: absolute;
-  bottom: 5px;
-  left: 0;
-}
-
-form input:focus + .label-name .content-name,
-form input:valid + .label-name .content-name {
-  transform: translateY(-150%);
-  font-size: 0.75rem;
-  color: #44a7c3;
-}
-
-form input:focus + .label-name::after,
-form input:valid + .label-name::after {
-  transform: translateX(0%);
-}
-
 * {
   transition: all ease-in 0.3s;
 }
-.contact {
-  background-color: white;
+.contact-page {
+  /* background-color: white; */
   width: 40%;
   padding: 1rem;
-  /* height: 80%; */
-  /* display: flex;
+  box-shadow: 4px 8px 16px 1px rgba(179, 179, 179, 0.2);
+  display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-around; */
-  /* opacity: 0;
-  transform: scale(0.5); */
+  align-items: center;
 }
 
 #title {
   width: 100%;
-}
-.title {
+  margin: 1.25rem 0 1.25rem 0;
   text-align: center;
-  margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
-  /* background-color: salmon; */
 }
-#contact-form {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
+
+form {
+  width: 80%;
   padding: 1rem;
+}
+
+label {
   position: relative;
 }
-/*
-#contact-form input,
-#contact-form textarea {
-  transition: all ease-in 0.3s;
+input,
+textarea {
   display: block;
   width: 100%;
-  height: 100%;
-  margin: 0 auto 1.5rem auto;
-
+  height: 48px;
+  padding: 0px 0 0 8px;
   outline: none;
-  border: none;
 
-  border-bottom: 1px solid rgb(190, 182, 219);
-  font-size: 0.875rem;
-  font-family: "Roboto", sans-serif;
-} */
-
-/* #contact-form input:focus,
-#contact-form textarea:focus {
-  border-bottom: 1px solid gray;
-} */
-
-#contact-form textarea {
-  resize: none;
-  height: 80%;
+  border: 1px solid rgb(116, 116, 116);
+  border-radius: 4px;
+  margin-bottom: 1.25rem;
 }
 
-.submit-button {
-  width: 60%;
-  margin: 1rem auto 0 auto;
-  padding: 0.5rem;
-  font-size: 1rem;
-  font-weight: 600;
+textarea {
+  resize: none;
+  padding: 20px 0 0 8px;
+  height: 80px !important;
   font-family: "Roboto", sans-serif;
+}
+
+input:focus + .content-name,
+textarea:focus + .content-name {
+  background-color: white;
+  color: #344a5f;
+  border-radius: 2px;
+  top: -7px;
+  padding: 0.25rem;
+}
+
+input:focus,
+textarea:focus {
+  border: 1px solid #3994ad;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.submit-button {
+  width: 40%;
+  padding: 0.5rem;
+  margin-top: 1.5rem;
   background-color: transparent;
-  border: none;
-  border: 1px solid plum;
+  border: 1px solid #619aaa;
   border-radius: 4px;
   cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: "Roboto", sans-serif;
 }
 
 .mysms {
@@ -253,5 +202,14 @@ form input:valid + .label-name::after {
 .contact-info {
   opacity: 0;
   transform: scale(0.3);
+}
+
+span {
+  color: silver;
+  font-size: 0.75rem;
+  padding-left: 4px;
+  position: absolute;
+  top: 16px;
+  left: 8px;
 }
 </style>

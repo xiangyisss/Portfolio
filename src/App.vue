@@ -32,19 +32,18 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   font-size: 16px;
   color: #2c3e50;
-  display: flex;
-  flex-direction: row;
+  background: linear-gradient(193.13deg, #44a7c3 7.05%, #015871 87.55%);
+  /* display: flex;
+  flex-direction: row; */
 }
 
 .pages {
-  margin-left: 30%;
-
-  padding-left: 50px;
+  /* margin-left: 20%;
+  padding-left: 50px; */
   width: 100%;
   min-height: 100vh;
   display: flex;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
-  /* background-color: pink; */
 }
 </style>

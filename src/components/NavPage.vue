@@ -5,15 +5,18 @@
       <router-link :to="{ name: 'Home' }" class="nav-items" @click="moveLogo">
         Home</router-link
       >
+
       <router-link :to="{ name: 'About' }" class="nav-items" @click="moveLogo"
         >About</router-link
       >
+
       <router-link
         :to="{ name: 'Projects' }"
         class="nav-items"
         @click="moveLogo"
         >Projects</router-link
       >
+
       <router-link :to="{ name: 'Contact' }" class="nav-items" @click="moveLogo"
         >Contact</router-link
       >
@@ -33,7 +36,7 @@ export default {
   name: "NavigationPage",
   methods: {
     moveLogo() {
-      this.$refs.move.moveBox(15, 5);
+      this.$refs.move.moveBox(12, 3);
     },
   },
 };
@@ -46,18 +49,26 @@ export default {
 }
 #nav {
   position: fixed;
-  height: 100vh;
-  max-width: 30%;
+  height: 10vh;
+  width: 100%;
+  margin: 0 auto;
   display: flex;
-  justify-content: start;
+  justify-content: space-between;
   align-items: center;
-  /* background-color: coral; */
+  padding: 1rem;
 }
 
 a {
   text-decoration: none;
   color: inherit;
   margin: 1rem;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 30%;
 }
 
 .nav-items {
@@ -87,7 +98,7 @@ a {
   content: "";
   width: 20px;
   height: 2px;
-  background-color: #3994ad;
+  background-color: #44cfcb;
   position: absolute;
   bottom: 2px;
   left: 0;
@@ -97,8 +108,9 @@ a {
   height: 5%;
   width: 100vw;
   position: absolute;
-  bottom: 0;
-  left: 130%;
+  top: 1500%;
+  left: 0;
+  /* left: 130%; */
   transform: rotate(-28deg);
   background: #015871;
 }
@@ -108,7 +120,7 @@ a {
     repeat-x;
   position: absolute;
   top: -153px;
-  width: 10000px;
+  width: 100000px;
   height: 155px;
   animation: wave 7s ease-in-out infinite;
   transform: rotate3d(0, 0, 0);
@@ -124,7 +136,7 @@ a {
     margin-left: 0;
   }
   100% {
-    margin-left: -1600px;
+    margin-left: -2600px;
   }
 }
 
