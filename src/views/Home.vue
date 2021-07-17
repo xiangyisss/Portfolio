@@ -9,7 +9,7 @@
     </p>
 
     <router-link :to="{ name: 'Contact' }">
-      <h3 class="item contact">Contact me</h3>
+      <p class="item contact">Contact me</p>
     </router-link>
   </div>
 </template>
@@ -39,6 +39,7 @@ export default {
 }
 .home {
   width: 60%;
+  margin-top: 10vh;
   /* height: 80%; */
   display: flex;
   flex-direction: column;
@@ -52,16 +53,16 @@ export default {
 }
 
 .name {
-  font-size: 60px;
+  font-size: 3.75rem;
   font-weight: 800;
 }
 .front-end {
-  font-size: 58px;
+  font-size: 3.625rem;
   color: #344a5f;
   font-weight: 700;
 }
 .describ {
-  font-size: 18px;
+  font-size: 1rem;
   font-weight: 500;
   color: #344a5f;
   margin: 1rem 0 3rem 0;
@@ -75,14 +76,36 @@ a {
 }
 
 .contact {
-  width: 140px;
-  height: 50px;
+  width: 110px;
+  height: 44px;
   text-align: center;
-  border: 2px solid #44cfcb;
-  color: #44cfcb;
+  font-size: 1rem;
+  font-weight: 500;
+  border: 2px solid #44a7c3;
+  color: #44a7c3;
   border-radius: 4px;
-  background-color: trasparent;
-  line-height: 50px;
+  line-height: 44px;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact::before {
+  content: " ";
+  width: 110px;
+  height: 44px;
+  background-color: #44a8c344;
+  border: none;
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  top: -2px;
+  border-radius: 4px;
+  transform: translateX(-110px);
+}
+
+.contact:hover::before {
+  transform: translateX(0%);
+  transition: all 0.2s ease;
 }
 
 .item {

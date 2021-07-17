@@ -1,7 +1,10 @@
 <template>
   <div class="contact-page">
     <div id="title">
-      <h1 class="contact-info">Contact</h1>
+      <h1 class="contact-info">Get in touch</h1>
+      <p class="contact-info info-text">
+        Feel free to contact me, I will get back to you as soon as possible.
+      </p>
     </div>
     <form action="" class="contact-info" autocomplete="off">
       <!-- <div class="name-section">
@@ -104,10 +107,12 @@ export default {
   transition: all ease-in 0.3s;
 }
 .contact-page {
-  /* background-color: white; */
   width: 40%;
+  margin-top: 10vh;
   padding: 1rem;
-  box-shadow: 4px 8px 16px 1px rgba(179, 179, 179, 0.2);
+  /* box-shadow: 4px 8px 16px 1px rgba(179, 179, 179, 0.2); */
+  border-right: 1px solid rgba(255, 255, 255, 0.089);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.089);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -115,7 +120,7 @@ export default {
 
 #title {
   width: 100%;
-  margin: 1.25rem 0 1.25rem 0;
+  margin: 1.25rem;
   text-align: center;
 }
 
@@ -134,7 +139,6 @@ textarea {
   height: 48px;
   padding: 0px 0 0 8px;
   outline: none;
-
   border: 1px solid rgb(116, 116, 116);
   border-radius: 4px;
   margin-bottom: 1.25rem;
@@ -150,7 +154,7 @@ textarea {
 input:focus + .content-name,
 textarea:focus + .content-name {
   background-color: white;
-  color: #344a5f;
+  color: #3994ad;
   border-radius: 2px;
   top: -7px;
   padding: 0.25rem;
@@ -166,18 +170,19 @@ textarea:focus {
   justify-content: center;
   align-items: center;
 }
+/* 
 .submit-button {
   width: 40%;
   padding: 0.5rem;
   margin-top: 1.5rem;
   background-color: transparent;
-  border: 1px solid #619aaa;
+  border: 1px solid #44cfcb;
   border-radius: 4px;
   cursor: pointer;
   font-size: 1rem;
   font-weight: 500;
   font-family: "Roboto", sans-serif;
-}
+} */
 
 .mysms {
   width: 80%;
@@ -201,15 +206,55 @@ textarea:focus {
 
 .contact-info {
   opacity: 0;
-  transform: scale(0.3);
+  transform: scale(0.9);
+}
+
+.info-text {
+  margin-top: 1rem;
+  font-weight: 500;
 }
 
 span {
-  color: silver;
+  color: rgb(99, 95, 95);
   font-size: 0.75rem;
   padding-left: 4px;
   position: absolute;
   top: 16px;
   left: 8px;
+}
+
+.submit-button {
+  width: 110px;
+  height: 44px;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  border: 2px solid #44a7c3;
+  background-color: transparent;
+  color: #44a7c3;
+  border-radius: 4px;
+  line-height: 44px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.submit-button::before {
+  content: " ";
+  width: 110px;
+  height: 44px;
+  background-color: #44a8c344;
+  border: none;
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  top: -2px;
+  border-radius: 4px;
+  transform: translateX(-110px);
+}
+
+.submit-button:hover::before {
+  transform: translateX(0%);
+  transition: all 0.2s ease;
 }
 </style>

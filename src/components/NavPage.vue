@@ -6,10 +6,6 @@
         Home</router-link
       >
 
-      <router-link :to="{ name: 'About' }" class="nav-items" @click="moveLogo"
-        >About</router-link
-      >
-
       <router-link
         :to="{ name: 'Projects' }"
         class="nav-items"
@@ -17,26 +13,28 @@
         >Projects</router-link
       >
 
+      <router-link :to="{ name: 'About' }" class="nav-items" @click="moveLogo"
+        >About</router-link
+      >
+
       <router-link :to="{ name: 'Contact' }" class="nav-items" @click="moveLogo"
         >Contact</router-link
       >
     </div>
 
-    <div class="wave">
-      <div class="line"></div>
-      <div class="line"></div>
-    </div>
+    <wave />
   </nav>
 </template>
 
 <script>
 import Logo from "./Logo.vue";
+import Wave from "@/components/Wave.vue";
 export default {
-  components: { Logo },
+  components: { Logo, Wave },
   name: "NavigationPage",
   methods: {
     moveLogo() {
-      this.$refs.move.moveBox(12, 3);
+      this.$refs.move.moveBox(4, 2);
     },
   },
 };
@@ -53,7 +51,7 @@ export default {
   width: 100%;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   padding: 1rem;
 }
@@ -76,7 +74,7 @@ a {
   height: 2.5rem;
   /* line-height: 2.5rem; */
   font-weight: 500;
-  color: #262831;
+  color: #2c3e50;
   display: flex;
   justify-content: start;
   align-items: center;
@@ -88,7 +86,7 @@ a {
 .nav-items:hover {
   /* border: 1px solid rebeccapurple;
   background-color: transparent; */
-  color: #6c7d8d;
+  color: #44a7c3;
   padding-left: 0.25rem;
   transition: all 0.3s;
 }
@@ -98,55 +96,9 @@ a {
   content: "";
   width: 20px;
   height: 2px;
-  background-color: #44cfcb;
+  background-color: #44a7c3;
   position: absolute;
   bottom: 2px;
   left: 0;
-}
-
-.wave {
-  height: 5%;
-  width: 100vw;
-  position: absolute;
-  top: 1500%;
-  left: 0;
-  /* left: 130%; */
-  transform: rotate(-28deg);
-  background: #015871;
-}
-
-.line {
-  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg)
-    repeat-x;
-  position: absolute;
-  top: -153px;
-  width: 100000px;
-  height: 155px;
-  animation: wave 7s ease-in-out infinite;
-  transform: rotate3d(0, 0, 0);
-}
-
-.line:nth-of-type(2) {
-  top: -150px;
-  animation: wave 7s ease-in-out infinite, swell 7s ease -1.25s infinite;
-}
-
-@keyframes wave {
-  0% {
-    margin-left: 0;
-  }
-  100% {
-    margin-left: -2600px;
-  }
-}
-
-@keyframes swell {
-  0%,
-  100% {
-    transform: translate3d(0, -15px, 0);
-  }
-  50% {
-    transform: translate3d(0, 5px, 0);
-  }
 }
 </style>

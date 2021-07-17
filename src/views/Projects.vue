@@ -15,7 +15,7 @@ export default {};
 <style scoped>
 .projects {
   width: 60%;
-
+  margin-top: 10vh;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   place-items: center;

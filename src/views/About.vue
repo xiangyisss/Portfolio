@@ -4,12 +4,12 @@
       <h1 class="about info">About me</h1>
       <div class="photo info"></div>
       <p class="info-text info">
-        I am a frontend developer based in the Netherlands. I enjoy turning a
-        simple idea into a beautiful design, to then be a functional application
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis,
-        temporibus dignissimos fugit, ratione eaque consequatur quis magnam odio
-        repellat officiis vel provident recusandae, autem dicta consectetur.
-        Aliquid suscipit quo reprehenderit.
+        Hi, I'm Xiang. I am a frontend developer based in the Netherlands. I
+        enjoy turning a simple idea into a beautiful design, to then be a
+        functional application Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Corporis, temporibus dignissimos fugit, ratione eaque
+        consequatur quis magnam odio repellat officiis vel provident recusandae,
+        autem dicta consectetur. Aliquid suscipit quo reprehenderit.
       </p>
     </div>
     <div class="skill-part">
@@ -17,6 +17,7 @@
       <img src="../assets/Html.svg" class="images" alt="" />
       <img src="../assets/javascript.svg" class="images" alt="" />
       <img src="../assets/vue.svg" class="images" alt="" />
+      <img src="../assets/github.svg" class="images" alt="" />
     </div>
   </div>
 </template>
@@ -53,28 +54,20 @@ export default {
 }
 .about-page {
   width: 60%;
-  /* height: 80%; */
-  /* display: flex;
-  justify-content: space-around;
-  align-items: center; */
-  /* background-color: green; */
-  display: flex;
-  grid-template-columns: 2fr 1fr;
+  margin-top: 10vh;
   padding: 1rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.089);
-  border-left: 1px solid rgba(255, 255, 255, 0.089);
+  /* border-bottom: 1px solid rgba(255, 255, 255, 0.089);
+  border-left: 1px solid rgba(255, 255, 255, 0.089); */
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .my-info {
   width: 70%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  /* background-color: white; */
   padding: 1rem;
 }
 
-.my-info > * {
+.info:not(:last-child) {
   margin-bottom: 2rem;
 }
 
@@ -82,9 +75,9 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-left: 56px;
-  /* background-color: #000; */
+  align-items: center;
   width: 30%;
+  /* background-color: #000; */
 }
 .skill-part > * {
   margin-bottom: 1rem;
@@ -93,20 +86,24 @@ export default {
 .photo {
   width: 200px;
   height: 200px;
-  /* border-radius: 100%; */
+  border-radius: 4px;
   background-image: url("../assets/profile.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.photo:hover {
+  filter: none;
 }
 .about {
   color: #2c3e50;
 }
 .info-text {
   text-align: left;
-  font-weight: 600;
-  color: #344a5f;
-  user-select: none;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  line-height: 1.5rem;
 }
 
 .info {
@@ -115,10 +112,10 @@ export default {
 }
 
 .skill-part img {
-  width: 30px;
-  height: 40px;
+  width: 24px;
+  height: 24px;
   display: block;
   opacity: 0;
-  transform: scale(0.5);
+  transform: scale(0.8);
 }
 </style>
