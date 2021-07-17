@@ -39,14 +39,9 @@ export default {
   color: #2c3e50;
   background: white;
   /* background: linear-gradient(193.13deg, #44a7c3 7.05%, #015871 87.55%); */
-  /* user-select: none; */
-  /* display: flex;
-  flex-direction: row; */
 }
 
 .pages {
-  /* margin-left: 20%;
-  padding-left: 50px; */
   width: 100%;
   min-height: 100vh;
   display: flex;

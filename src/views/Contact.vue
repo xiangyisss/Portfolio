@@ -7,39 +7,18 @@
       </p>
     </div>
     <form action="" class="contact-info" autocomplete="off">
-      <!-- <div class="name-section">
-        <input type="text" v-model="form.name" required />
-        <label for="name" class="label-name">
-          <span class="content-name">Name</span>
-        </label>
-      </div>
-
-      <div class="email-section">
-        <input type="text" v-model="form.email" required />
-        <label for="email" class="label-name">
-          <span class="content-name">E-mail</span>
-        </label>
-      </div>
-
-      <div class="message-section">
-        <textarea type="text" v-model="form.message" required />
-        <label for="message" class="message-name">
-          <span class="content-name">Your message</span>
-        </label>
-      </div> -->
-
-      <label for="name" class="label-name">
-        <input type="text" name="Name" v-model="form.name" required />
+      <label for="name">
+        <input type="text" name="name" v-model="form.name" required />
         <span class="content-name">Name</span>
       </label>
 
       <label for="email">
-        <input type="email" v-model="form.email" required />
+        <input type="email" name="email" v-model="form.email" required />
         <span class="content-name">Email</span>
       </label>
 
       <label for="message">
-        <textarea v-model="form.message" required />
+        <textarea v-model="form.message" name="message" required />
         <span class="content-name">Message</span>
       </label>
       <div class="button">
@@ -73,31 +52,14 @@ export default {
       console.log(contactInfo);
     },
   },
-  // mounted() {
-  //   let contact = document.querySelectorAll(".contact-info");
-  //   let delay = 0;
-  //   setTimeout(() => {
-  //     contact.forEach((info) => {
-  //       delay += 0.1;
-  //       info.style.opacity = "1";
-  //       info.style.transform = "translateY(40px)";
-  //       info.style.transform = "translateX(-60px)";
-  //       info.style.transitionDelay = delay + "s";
-  //     });
-  //   });
-  // },
   mounted() {
     let contacts = document.querySelectorAll(".contact-info");
-    // let delay = 0.1;
-
     setTimeout(() => {
       contacts.forEach((info) => {
-        // delay += 0.1;
         info.style.opacity = "1";
         info.style.transform = "scale(1)";
-        // info.style.transitionDelay = delay + "s";
       });
-    });
+    }, 0);
   },
 };
 </script>
@@ -110,9 +72,8 @@ export default {
   width: 40%;
   margin-top: 10vh;
   padding: 1rem;
-  /* box-shadow: 4px 8px 16px 1px rgba(179, 179, 179, 0.2); */
-  border-right: 1px solid rgba(255, 255, 255, 0.089);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.089);
+  /* border-right: 1px solid rgba(255, 255, 255, 0.089);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.089); */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -136,7 +97,7 @@ input,
 textarea {
   display: block;
   width: 100%;
-  height: 48px;
+  height: 3rem;
   padding: 0px 0 0 8px;
   outline: none;
   border: 1px solid rgb(116, 116, 116);
@@ -146,62 +107,25 @@ textarea {
 
 textarea {
   resize: none;
-  padding: 20px 0 0 8px;
-  height: 80px !important;
+  padding: 1.25rem 0 0 0.5rem;
+  height: 5rem !important;
   font-family: "Roboto", sans-serif;
 }
 
 input:focus + .content-name,
-textarea:focus + .content-name {
+textarea:focus + .content-name,
+input:valid + .content-name,
+textarea:valid + .content-name {
   background-color: white;
   color: #3994ad;
   border-radius: 2px;
-  top: -7px;
+  top: -0.438rem;
   padding: 0.25rem;
 }
 
 input:focus,
 textarea:focus {
   border: 1px solid #3994ad;
-}
-
-.button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-/* 
-.submit-button {
-  width: 40%;
-  padding: 0.5rem;
-  margin-top: 1.5rem;
-  background-color: transparent;
-  border: 1px solid #44cfcb;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 1rem;
-  font-weight: 500;
-  font-family: "Roboto", sans-serif;
-} */
-
-.mysms {
-  width: 80%;
-}
-.sms {
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  width: 80%;
-  margin: 0 auto;
-}
-
-.sms img {
-  display: block;
-  /* width: 20px; */
-  height: 20px;
-  margin: 1rem 1rem 1rem 1rem;
-  filter: invert(17%) sepia(94%) saturate(7381%) hue-rotate(296deg)
-    brightness(83%) contrast(108%);
 }
 
 .contact-info {
@@ -217,15 +141,22 @@ textarea:focus {
 span {
   color: rgb(99, 95, 95);
   font-size: 0.75rem;
-  padding-left: 4px;
+  padding-left: 0.25rem;
   position: absolute;
-  top: 16px;
-  left: 8px;
+  top: 1.125rem;
+  left: 0.5rem;
+  pointer-events: none;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .submit-button {
-  width: 110px;
-  height: 44px;
+  width: 6.875rem;
+  height: 2.75rem;
   text-align: center;
   font-size: 1rem;
   font-weight: 600;
@@ -233,7 +164,7 @@ span {
   background-color: transparent;
   color: #44a7c3;
   border-radius: 4px;
-  line-height: 44px;
+  line-height: 2.75rem;
   cursor: pointer;
   position: relative;
   overflow: hidden;
@@ -241,16 +172,16 @@ span {
 
 .submit-button::before {
   content: " ";
-  width: 110px;
-  height: 44px;
+  width: 6.875rem;
+  height: 2.75rem;
   background-color: #44a8c344;
   border: none;
   position: absolute;
   z-index: -1;
   left: 0;
-  top: -2px;
+  top: -0.125rem;
   border-radius: 4px;
-  transform: translateX(-110px);
+  transform: translateX(-6.875rem);
 }
 
 .submit-button:hover::before {

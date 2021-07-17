@@ -84,8 +84,8 @@ export default {
 }
 
 .photo {
-  width: 200px;
-  height: 200px;
+  width: 12.5rem;
+  height: 12.5rem;
   border-radius: 4px;
   background-image: url("../assets/profile.jpg");
   background-size: cover;
@@ -108,12 +108,12 @@ export default {
 
 .info {
   opacity: 0;
-  transform: translateX(50px);
+  transform: translateX(3.125rem);
 }
 
 .skill-part img {
-  width: 24px;
-  height: 24px;
+  width: 1.5rem;
+  height: 1.5rem;
   display: block;
   opacity: 0;
   transform: scale(0.8);

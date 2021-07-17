@@ -5,16 +5,15 @@
       <router-link :to="{ name: 'Home' }" class="nav-items" @click="moveLogo">
         Home</router-link
       >
+      <router-link :to="{ name: 'About' }" class="nav-items" @click="moveLogo"
+        >About</router-link
+      >
 
       <router-link
         :to="{ name: 'Projects' }"
         class="nav-items"
         @click="moveLogo"
         >Projects</router-link
-      >
-
-      <router-link :to="{ name: 'About' }" class="nav-items" @click="moveLogo"
-        >About</router-link
       >
 
       <router-link :to="{ name: 'Contact' }" class="nav-items" @click="moveLogo"
@@ -34,7 +33,7 @@ export default {
   name: "NavigationPage",
   methods: {
     moveLogo() {
-      this.$refs.move.moveBox(4, 2);
+      this.$refs.move.moveBox(2, 2);
     },
   },
 };
@@ -94,11 +93,11 @@ a {
 .active-menu::after {
   /* border-bottom: 2px solid salmon; */
   content: "";
-  width: 20px;
-  height: 2px;
+  width: 1.25rem;
+  height: 0.125rem;
   background-color: #44a7c3;
   position: absolute;
-  bottom: 2px;
+  bottom: 0.125rem;
   left: 0;
 }
 </style>

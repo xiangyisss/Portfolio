@@ -71,36 +71,36 @@ export default {
 a {
   text-decoration: none;
   color: inherit;
-  width: 140px;
-  height: 50px;
+  width: 8.75rem;
+  height: 3.125rem;
 }
 
 .contact {
-  width: 110px;
-  height: 44px;
+  width: 6.875rem;
+  height: 2.75rem;
   text-align: center;
   font-size: 1rem;
   font-weight: 500;
   border: 2px solid #44a7c3;
   color: #44a7c3;
   border-radius: 4px;
-  line-height: 44px;
+  line-height: 2.75rem;
   position: relative;
   overflow: hidden;
 }
 
 .contact::before {
   content: " ";
-  width: 110px;
-  height: 44px;
+  width: 6.875rem;
+  height: 2.75rem;
   background-color: #44a8c344;
   border: none;
   position: absolute;
   z-index: -1;
   left: 0;
-  top: -2px;
+  top: -0.125rem;
   border-radius: 4px;
-  transform: translateX(-110px);
+  transform: translateX(-6.875rem);
 }
 
 .contact:hover::before {
@@ -110,7 +110,7 @@ a {
 
 .item {
   opacity: 0;
-  transform: translate(50px, 50px);
+  transform: translate(3.125rem, 3.125rem);
   user-select: none;
 }
 </style>

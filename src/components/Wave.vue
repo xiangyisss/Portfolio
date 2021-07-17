@@ -14,16 +14,17 @@
   left: 50vw;
   /* left: 130%; */
   transform: rotate(-90deg);
-  background: #015871;
+  /* background: #015871; */
 }
 
 .line {
   background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg)
     repeat-x;
   position: absolute;
-  top: -133px;
+  top: -118px;
   width: 3000vw;
-  height: 40vh;
+  height: 25vh;
+  /* height: 40vh; */
   animation: wave 15s ease-in-out infinite;
   transform: rotate3d(0, 0, 0);
 }
@@ -38,7 +39,7 @@
     margin-left: 0;
   }
   50% {
-    margin-left: -2600px;
+    margin-left: -2000px;
   }
   100% {
     margin-left: 0;
