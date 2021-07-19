@@ -67,6 +67,8 @@ export default {
   justify-content: space-around;
   align-items: center;
   padding: 1rem;
+  z-index: 1;
+  background-color: #fff;
 }
 
 a {
@@ -88,6 +90,7 @@ a {
   /* line-height: 2.5rem; */
   font-weight: 500;
   color: #2c3e50;
+
   display: flex;
   justify-content: start;
   align-items: center;

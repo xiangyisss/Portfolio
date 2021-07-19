@@ -43,12 +43,9 @@ export default {
 }
 .home-page {
   width: 60%;
-  margin-top: 10vh;
-  /* height: 80%; */
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* background-color: yellow; */
   padding: 1rem;
 }
 
@@ -123,8 +120,7 @@ a {
 /*Mobile version*/
 @media (max-width: 414px) {
   .home-page {
-    width: 80%;
-    margin-top: 0;
+    width: 90%;
   }
   .name {
     font-size: 2.75rem;

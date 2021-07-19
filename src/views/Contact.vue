@@ -122,8 +122,8 @@ textarea:valid + .content-name {
   background-color: white;
   color: #3994ad;
   border-radius: 2px;
-  top: -0.438rem;
-  padding: 0.25rem;
+  top: -8px;
+  padding: 4px;
 }
 
 input:focus,
@@ -190,5 +190,11 @@ span {
 .submit-button:hover::before {
   transform: translateX(0%);
   transition: all 0.2s ease;
+}
+
+@media (max-width: 414px) {
+  .contact-page {
+    width: 90%;
+  }
 }
 </style>

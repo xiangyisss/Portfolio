@@ -3,8 +3,9 @@
     <!-- <nav-page v-if="!'NotFound'.includes($route.name)" /> -->
     <!-- <nav-page v-if="!$route.meta.hideNav" /> -->
     <div>
-      <!-- <nav-page v-if="width > 600" /> -->
-      <nav-page />
+      <nav-page v-if="width > 600" />
+      <!-- <nav-page /> -->
+      <mobile-nav-page v-if="width < 600" />
     </div>
     <div class="pages">
       <router-view />
@@ -14,20 +15,20 @@
 
 <script>
 import NavPage from "@/components/NavPage.vue";
+import MobileNavPage from "./components/MobileNavPage.vue";
 
 export default {
-  components: { NavPage },
+  components: { NavPage, MobileNavPage },
   data() {
     return {
       width: 0,
     };
   },
   created() {
+    this.width = window.innerWidth;
     window.addEventListener("resize", this.checkWidth);
   },
-  unmounted() {
-    window.removeEventListener("resize", this.checkWidth);
-  },
+
   methods: {
     checkWidth() {
       this.width = window.innerWidth;

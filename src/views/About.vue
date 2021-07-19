@@ -58,6 +58,7 @@ export default {
   padding: 1rem;
   display: flex;
   flex-wrap: wrap;
+  /* background-color: pink; */
 }
 
 .my-info {
@@ -75,15 +76,14 @@ export default {
   justify-content: center;
   align-items: center;
   width: 30%;
-  /* background-color: #000; */
 }
 .skill-part > * {
   margin-bottom: 1rem;
 }
 
 .photo {
-  width: 12.5rem;
-  height: 12.5rem;
+  width: 10rem;
+  height: 10rem;
   border-radius: 4px;
   background-image: url("../assets/profile.jpg");
   background-size: cover;
@@ -119,8 +119,20 @@ export default {
 
 @media (max-width: 414px) {
   .about-page {
-    width: 80%;
-    /* margin-top: 10vh; */
+    width: 90%;
+    display: block;
+  }
+  .my-info {
+    width: 100%;
+  }
+  .skill-part {
+    width: 100%;
+    flex-direction: row;
+    padding: 1.5rem;
+  }
+  .skill-part > * {
+    margin-right: 1rem;
+    margin-bottom: 0;
   }
 }
 </style>

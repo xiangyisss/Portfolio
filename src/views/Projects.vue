@@ -33,11 +33,12 @@ export default {
 
 .projects-page {
   width: 60%;
-  margin-top: 10vh;
+  padding: 1rem;
 }
 
 .header {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
 }
 
 .text {
@@ -87,5 +88,18 @@ export default {
 .items {
   opacity: 0;
   transform: scale(0.8);
+}
+
+@media (max-width: 414px) {
+  .projects-page {
+    width: 90%;
+    margin-top: 10vh;
+  }
+  .projects {
+    flex-direction: column;
+  }
+  .project {
+    margin-bottom: 1rem;
+  }
 }
 </style>
