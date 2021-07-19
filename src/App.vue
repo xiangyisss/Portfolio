@@ -3,7 +3,8 @@
     <!-- <nav-page v-if="!'NotFound'.includes($route.name)" /> -->
     <!-- <nav-page v-if="!$route.meta.hideNav" /> -->
     <div>
-      <nav-page v-if="windowWidth > 600" />
+      <!-- <nav-page v-if="width > 600" /> -->
+      <nav-page />
     </div>
     <div class="pages">
       <router-view />
@@ -18,8 +19,19 @@ export default {
   components: { NavPage },
   data() {
     return {
-      windowWidth: window.innerWidth,
+      width: 0,
     };
+  },
+  created() {
+    window.addEventListener("resize", this.checkWidth);
+  },
+  unmounted() {
+    window.removeEventListener("resize", this.checkWidth);
+  },
+  methods: {
+    checkWidth() {
+      this.width = window.innerWidth;
+    },
   },
 };
 </script>
@@ -38,7 +50,6 @@ export default {
   font-size: 16px;
   color: #2c3e50;
   background: white;
-  /* background: linear-gradient(193.13deg, #44a7c3 7.05%, #015871 87.55%); */
 }
 
 .pages {
@@ -47,5 +58,11 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media (max-width: 414px) {
+  .app {
+    background: steelblue;
+  }
 }
 </style>

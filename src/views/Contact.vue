@@ -21,18 +21,21 @@
         <textarea v-model="form.message" name="message" required />
         <span class="content-name">Message</span>
       </label>
-      <div class="button">
+      <!-- <div class="button">
         <button type="submit" class="submit-button" @submit.prevent="sendForm">
           Submit
         </button>
-      </div>
+      </div> -->
+      <BaseButton type="submit" @submit.prevent="sendForm"></BaseButton>
     </form>
   </div>
 </template>
 
 <script>
+import BaseButton from "@/components/BaseButton.vue";
 export default {
   name: "Contact",
+  components: { BaseButton },
   data() {
     return {
       form: {

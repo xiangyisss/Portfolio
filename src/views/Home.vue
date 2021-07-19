@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="home-page">
     <h1 class="item name">XiangYi Sun.</h1>
     <h2 class="item front-end">Front-End Developer</h2>
     <p class="item describ">
@@ -9,14 +9,18 @@
     </p>
 
     <router-link :to="{ name: 'Contact' }">
-      <p class="item contact">Contact me</p>
+      <!-- <p class="item contact">Contact me</p>
+      <input type="submit" class="button" value="Contact me" /> -->
+      <BaseButton class="item">Contact me</BaseButton>
     </router-link>
   </div>
 </template>
 
 <script>
+import BaseButton from "@/components/BaseButton.vue";
 export default {
   name: "Home",
+  components: { BaseButton },
   mounted() {
     let items = document.querySelectorAll(".item");
     let delay = 0;
@@ -37,7 +41,7 @@ export default {
 * {
   transition: all ease-in-out 0.4s;
 }
-.home {
+.home-page {
   width: 60%;
   margin-top: 10vh;
   /* height: 80%; */
@@ -71,8 +75,10 @@ export default {
 a {
   text-decoration: none;
   color: inherit;
-  width: 8.75rem;
-  height: 3.125rem;
+  /* width: 8.75rem;
+  height: 3.125rem; */
+  width: 6.875rem;
+  height: 2.75rem;
 }
 
 .contact {
@@ -112,5 +118,22 @@ a {
   opacity: 0;
   transform: translate(3.125rem, 3.125rem);
   user-select: none;
+}
+
+/*Mobile version*/
+@media (max-width: 414px) {
+  .home-page {
+    width: 80%;
+    margin-top: 0;
+  }
+  .name {
+    font-size: 2.75rem;
+  }
+  .front-end {
+    font-size: 2.5rem;
+  }
+  .describ {
+    font-size: 1.25rem;
+  }
 }
 </style>

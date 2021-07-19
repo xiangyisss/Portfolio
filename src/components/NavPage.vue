@@ -21,7 +21,7 @@
       >
     </div>
 
-    <wave />
+    <wave v-if="width > 700" />
   </nav>
 </template>
 
@@ -31,9 +31,23 @@ import Wave from "@/components/Wave.vue";
 export default {
   components: { Logo, Wave },
   name: "NavigationPage",
+  data() {
+    return {
+      width: 0,
+    };
+  },
+  created() {
+    window.addEventListener("resize", this.checkWidth);
+  },
+  unmounted() {
+    window.removeEventListener("resize", this.checkWidth);
+  },
   methods: {
     moveLogo() {
       this.$refs.move.moveBox(2, 2);
+    },
+    checkWidth() {
+      this.width = window.innerWidth;
     },
   },
 };

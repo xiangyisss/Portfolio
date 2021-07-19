@@ -56,8 +56,6 @@ export default {
   width: 60%;
   margin-top: 10vh;
   padding: 1rem;
-  /* border-bottom: 1px solid rgba(255, 255, 255, 0.089);
-  border-left: 1px solid rgba(255, 255, 255, 0.089); */
   display: flex;
   flex-wrap: wrap;
 }
@@ -117,5 +115,12 @@ export default {
   display: block;
   opacity: 0;
   transform: scale(0.8);
+}
+
+@media (max-width: 414px) {
+  .about-page {
+    width: 80%;
+    /* margin-top: 10vh; */
+  }
 }
 </style>
