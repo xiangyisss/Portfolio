@@ -106,6 +106,7 @@ textarea {
   border: 1px solid rgb(116, 116, 116);
   border-radius: 4px;
   margin-bottom: 1.25rem;
+  position: relative;
 }
 
 textarea {
@@ -192,7 +193,7 @@ span {
   transition: all 0.2s ease;
 }
 
-@media (max-width: 414px) {
+@media (max-width: 600px) {
   .contact-page {
     width: 90%;
   }

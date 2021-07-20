@@ -37,10 +37,8 @@ export default {
     };
   },
   created() {
+    this.width = window.innerWidth;
     window.addEventListener("resize", this.checkWidth);
-  },
-  unmounted() {
-    window.removeEventListener("resize", this.checkWidth);
   },
   methods: {
     moveLogo() {
@@ -81,7 +79,9 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 30%;
+  width: 40%;
+  height: 10vh;
+  /* background-color: yellow; */
 }
 
 .nav-items {

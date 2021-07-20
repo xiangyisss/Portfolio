@@ -19,7 +19,7 @@ export default {
     setTimeout(() => {
       items.forEach((item) => {
         item.style.opacity = "1";
-        item.style.transform = "scale(1)";
+        item.style.transform = "translate(0)";
       });
     }, 0);
   },
@@ -28,7 +28,7 @@ export default {
 
 <style scoped>
 * {
-  transition: all 0.3s ease-in;
+  transition: all 0.4s ease-in;
 }
 
 .projects-page {
@@ -87,10 +87,11 @@ export default {
 
 .items {
   opacity: 0;
-  transform: scale(0.8);
+  /* transform: scale(0.8); */
+  transform: translateY(50px);
 }
 
-@media (max-width: 414px) {
+@media (max-width: 600px) {
   .projects-page {
     width: 90%;
     margin-top: 10vh;

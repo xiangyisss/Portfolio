@@ -118,7 +118,7 @@ a {
 }
 
 /*Mobile version*/
-@media (max-width: 414px) {
+@media (max-width: 600px) {
   .home-page {
     width: 90%;
   }

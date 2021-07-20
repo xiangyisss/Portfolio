@@ -117,7 +117,7 @@ export default {
   transform: scale(0.8);
 }
 
-@media (max-width: 414px) {
+@media (max-width: 600px) {
   .about-page {
     width: 90%;
     display: block;

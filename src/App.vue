@@ -60,10 +60,10 @@ export default {
   justify-content: center;
   align-items: center;
 }
-
-@media (max-width: 414px) {
+/* 
+@media (max-width: 600px) {
   .app {
     background: steelblue;
   }
-}
+} */
 </style>
