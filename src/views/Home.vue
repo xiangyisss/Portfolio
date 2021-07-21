@@ -1,7 +1,7 @@
 <template>
-  <div class="home-page">
+  <div class="home_page">
     <h1 class="item name">XiangYi Sun.</h1>
-    <h2 class="item front-end">Front-End Developer</h2>
+    <h2 class="item front_end">Front-End Developer</h2>
     <p class="item describ">
       Experienced frontend developer with solture on HTML CSS JS and Vuejs.
       Always up for a challenge and eager to turn an idea into a working system
@@ -9,8 +9,6 @@
     </p>
 
     <router-link :to="{ name: 'Contact' }">
-      <!-- <p class="item contact">Contact me</p>
-      <input type="submit" class="button" value="Contact me" /> -->
       <BaseButton class="item">Contact me</BaseButton>
     </router-link>
   </div>
@@ -29,7 +27,6 @@ export default {
         delay += 0.1;
         item.style.opacity = 1;
         item.style.transform = "translate(0px, 0px)";
-        // item.style.transform = "translateX(0px)";
         item.style.transitionDelay = delay + "s";
       });
     }, 0);
@@ -41,7 +38,7 @@ export default {
 * {
   transition: all ease-in-out 0.4s;
 }
-.home-page {
+.home_page {
   width: 60%;
   margin-top: 10vh;
   display: flex;
@@ -58,7 +55,7 @@ export default {
   font-size: 3.75rem;
   font-weight: 800;
 }
-.front-end {
+.front_end {
   font-size: 3.625rem;
   color: #344a5f;
   font-weight: 700;
@@ -120,13 +117,13 @@ a {
 
 /*Mobile version*/
 @media (max-width: 600px) {
-  .home-page {
+  .home_page {
     width: 90%;
   }
   .name {
     font-size: 2.75rem;
   }
-  .front-end {
+  .front_end {
     font-size: 2.5rem;
   }
   .describ {

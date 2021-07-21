@@ -1,12 +1,12 @@
 <template>
-  <div class="contact-page">
+  <div class="contact_page">
     <div id="title">
-      <h1 class="contact-info">Get in touch</h1>
-      <p class="contact-info info-text">
+      <h1 class="contact_info">Get in touch</h1>
+      <p class="contact_info info_text">
         Feel free to contact me, I will get back to you as soon as possible.
       </p>
     </div>
-    <form action="" class="contact-info" autocomplete="off">
+    <form action="" class="contact_info" autocomplete="off">
       <label for="name">
         <input type="text" name="name" v-model="form.name" required />
         <span class="content-name">Name</span>
@@ -21,11 +21,7 @@
         <textarea v-model="form.message" name="message" required />
         <span class="content-name">Message</span>
       </label>
-      <!-- <div class="button">
-        <button type="submit" class="submit-button" @submit.prevent="sendForm">
-          Submit
-        </button>
-      </div> -->
+
       <BaseButton type="submit" @submit.prevent="sendForm"></BaseButton>
     </form>
   </div>
@@ -56,7 +52,7 @@ export default {
     },
   },
   mounted() {
-    let contacts = document.querySelectorAll(".contact-info");
+    let contacts = document.querySelectorAll(".contact_info");
     setTimeout(() => {
       contacts.forEach((info) => {
         info.style.opacity = "1";
@@ -71,7 +67,7 @@ export default {
 * {
   transition: all ease-in 0.3s;
 }
-.contact-page {
+.contact_page {
   width: 40%;
   margin-top: 10vh;
   padding: 1rem;
@@ -131,12 +127,12 @@ textarea:focus {
   border: 1px solid #3994ad;
 }
 
-.contact-info {
+.contact_info {
   opacity: 0;
   transform: scale(0.9);
 }
 
-.info-text {
+.info_text {
   margin-top: 1rem;
   font-weight: 500;
 }
@@ -157,7 +153,7 @@ span {
   align-items: center;
 }
 
-.submit-button {
+.submit_button {
   width: 6.875rem;
   height: 2.75rem;
   text-align: center;
@@ -173,7 +169,7 @@ span {
   overflow: hidden;
 }
 
-.submit-button::before {
+.submit_button::before {
   content: " ";
   width: 6.875rem;
   height: 2.75rem;
@@ -187,13 +183,13 @@ span {
   transform: translateX(-6.875rem);
 }
 
-.submit-button:hover::before {
+.submit_button:hover::before {
   transform: translateX(0%);
   transition: all 0.2s ease;
 }
 
 @media (max-width: 600px) {
-  .contact-page {
+  .contact_page {
     width: 90%;
   }
 }

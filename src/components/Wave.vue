@@ -12,9 +12,7 @@
   position: absolute;
   top: 100vh;
   left: 50vw;
-  /* left: 130%; */
   transform: rotate(-90deg);
-  /* background: #015871; */
 }
 
 .line {
@@ -24,7 +22,6 @@
   top: -118px;
   width: 3000vw;
   height: 25vh;
-  /* height: 40vh; */
   animation: wave 15s ease-in-out infinite;
   transform: rotate3d(0, 0, 0);
 }

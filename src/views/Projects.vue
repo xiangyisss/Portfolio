@@ -1,5 +1,5 @@
 <template>
-  <div class="projects-page">
+  <div class="projects_page">
     <div class="header items">
       <h1 class="text">What I've built</h1>
     </div>
@@ -31,7 +31,7 @@ export default {
   transition: all 0.4s ease-in;
 }
 
-.projects-page {
+.projects_page {
   width: 60%;
   margin-top: 10vh;
   padding: 1rem;
@@ -93,7 +93,7 @@ export default {
 }
 
 @media (max-width: 600px) {
-  .projects-page {
+  .projects_page {
     width: 90%;
     margin-top: 10vh;
   }

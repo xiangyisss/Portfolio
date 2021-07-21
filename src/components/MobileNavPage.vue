@@ -185,7 +185,7 @@ a {
 .burger_btn_open .burger_btn::after {
   transform: rotate(-45deg) translate(-35px, -35px);
 }
-.active-menu {
+.active_menu {
   background-color: rgba(128, 128, 128, 0.24);
 }
 </style>

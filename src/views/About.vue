@@ -1,9 +1,9 @@
 <template>
-  <div class="about-page">
-    <div class="my-info">
+  <div class="about_page">
+    <div class="my_info">
       <h1 class="about info">About me</h1>
 
-      <p class="info-text info">
+      <p class="intro_part info">
         Hi, I'm Xiang. I am a frontend developer based in the Netherlands. I
         enjoy turning a simple idea into a beautiful design, to then be a
         functional application Lorem ipsum dolor sit amet consectetur
@@ -11,7 +11,7 @@
         consequatur quis magnam odio repellat officiis vel provident recusandae,
         autem dicta consectetur. Aliquid suscipit quo reprehenderit.
       </p>
-      <div class="skill-part">
+      <div class="skill_part">
         <h3 class="skill_text info">Skills to focus on</h3>
         <img src="../assets/Css.svg" class="images" alt="" />
         <img src="../assets/Html.svg" class="images" alt="" />
@@ -61,17 +61,15 @@ export default {
 * {
   transition: all ease 0.3s;
 }
-.about-page {
+.about_page {
   width: 60%;
   margin-top: 10vh;
   padding: 1rem;
   display: flex;
   flex-wrap: wrap;
-
-  /* background-color: pink; */
 }
 
-.my-info {
+.my_info {
   width: 70%;
   padding: 1rem;
   margin-bottom: 2rem;
@@ -85,17 +83,14 @@ export default {
 
 .my_photo {
   width: 30%;
-  /* padding: 1rem; */
   display: flex;
   justify-content: flex-end;
   align-items: center;
-
-  /* background-color: #fff; */
 }
 .photo {
-  width: 10rem;
-  height: 10rem;
-  border-radius: 4px;
+  width: 11rem;
+  height: 11rem;
+  border-radius: 8px;
   background-image: url("../assets/profile.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -104,36 +99,31 @@ export default {
   transform: scale(0.8);
 }
 
-.info-text {
+.intro_part {
   text-align: left;
   font-weight: 500;
   letter-spacing: 0.3px;
   line-height: 1.5rem;
 }
 
-/* .info {
-  opacity: 0;
-  transform: translateX(3.125rem);
-} */
-
 .skill_text {
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
 }
 
 img {
   width: 1.5rem;
   height: 1.5rem;
-  margin-right: 0.75rem;
+  margin-right: 1rem;
   opacity: 0;
   transform: scale(0.8);
 }
 
 @media (max-width: 600px) {
-  .about-page {
+  .about_page {
     width: 90%;
     display: block;
   }
-  .my-info {
+  .my_info {
     width: 100%;
   }
   .my_photo {

@@ -4,7 +4,6 @@
     <!-- <nav-page v-if="!$route.meta.hideNav" /> -->
     <div>
       <nav-page v-if="width > 600" />
-      <!-- <nav-page /> -->
       <mobile-nav-page v-if="width < 600" />
     </div>
     <div class="pages">
@@ -60,10 +59,4 @@ export default {
   justify-content: center;
   align-items: center;
 }
-/* 
-@media (max-width: 600px) {
-  .app {
-    background: steelblue;
-  }
-} */
 </style>

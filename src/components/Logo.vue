@@ -1,13 +1,9 @@
 <template>
   <div class="logo">
-    <!-- <div class="big-square">
-      <div class="square square-1"></div>
-      <div class="square square-2"></div>
-    </div> -->
-    <div class="square square-1"></div>
-    <div class="square square-2"></div>
-    <div class="square square-3"></div>
-    <div class="square square-4"></div>
+    <div class="square square_1"></div>
+    <div class="square square_2"></div>
+    <div class="square square_3"></div>
+    <div class="square square_4"></div>
   </div>
 </template>
 
@@ -15,10 +11,10 @@
 export default {
   name: "Logo",
   mounted() {
-    this.square1 = document.querySelector(".square-1");
-    this.square2 = document.querySelector(".square-2");
-    this.square3 = document.querySelector(".square-3");
-    this.square4 = document.querySelector(".square-4");
+    this.square1 = document.querySelector(".square_1");
+    this.square2 = document.querySelector(".square_2");
+    this.square3 = document.querySelector(".square_3");
+    this.square4 = document.querySelector(".square_4");
   },
   methods: {
     moveBox(vertical, horizontal) {
@@ -51,41 +47,29 @@ export default {
   border-radius: 100%;
   background: linear-gradient(193.13deg, #44a7c3 7.05%, #015871 87.55%);
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
-  /* padding-left: 40px; */
   display: flex;
   justify-content: space-around;
   align-items: center;
-  /* flex-wrap: wrap; */
   position: relative;
 }
-/*
-.square-1,
-.square-2 {
-  background-color: rgb(246, 246, 248);
-  transform: rotate(45deg);
-  box-shadow: 0px 12px 14px rgba(0, 0, 0, 0.25);
-} */
 
-.square-1 {
+.square_1 {
   top: 18%;
   left: 40%;
   /* transform: translateY(-10px) rotate(45deg); */
 }
 
-.square-2 {
-  bottom: 18%;
+.square_2 {
+  bottom: 19%;
   left: 40%;
   /* transform: translateY(10px) rotate(45deg); */
 }
 
-.square-3 {
+.square_3 {
   top: 40%;
   left: 20%;
 }
-.square-4 {
+.square_4 {
   top: 40%;
   right: 19%;
   /* transform: translateX(-10px) rotate(45deg); */

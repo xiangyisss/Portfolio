@@ -1,22 +1,22 @@
 <template>
   <nav id="nav">
     <logo ref="move" />
-    <div class="nav-menu">
-      <router-link :to="{ name: 'Home' }" class="nav-items" @click="moveLogo">
+    <div class="nav_menu">
+      <router-link :to="{ name: 'Home' }" class="nav_items" @click="moveLogo">
         Home</router-link
       >
-      <router-link :to="{ name: 'About' }" class="nav-items" @click="moveLogo"
+      <router-link :to="{ name: 'About' }" class="nav_items" @click="moveLogo"
         >About</router-link
       >
 
       <router-link
         :to="{ name: 'Projects' }"
-        class="nav-items"
+        class="nav_items"
         @click="moveLogo"
         >Projects</router-link
       >
 
-      <router-link :to="{ name: 'Contact' }" class="nav-items" @click="moveLogo"
+      <router-link :to="{ name: 'Contact' }" class="nav_items" @click="moveLogo"
         >Contact</router-link
       >
     </div>
@@ -66,7 +66,6 @@ export default {
   align-items: center;
   padding: 1rem;
   z-index: 1;
-  /* background-color: #000; */
 }
 
 a {
@@ -75,41 +74,33 @@ a {
   margin: 1rem;
 }
 
-.nav-menu {
+.nav_menu {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 30%;
   height: 10vh;
   margin-right: 18rem;
-  /* background-color: yellow; */
 }
 
-.nav-items {
+.nav_items {
   width: 5rem;
   height: 2.5rem;
-  /* line-height: 2.5rem; */
   font-weight: 500;
   color: #2c3e50;
-
   display: flex;
   justify-content: start;
   align-items: center;
   position: relative;
-  /* background-color: coral; */
-  /* padding-left: 0.75rem; */
 }
 
-.nav-items:hover {
-  /* border: 1px solid rebeccapurple;
-  background-color: transparent; */
+.nav_items:hover {
   color: #44a7c3;
   padding-left: 0.25rem;
   transition: all 0.3s;
 }
 
-.active-menu::after {
-  /* border-bottom: 2px solid salmon; */
+.active_menu::after {
   content: "";
   width: 1.25rem;
   height: 0.125rem;
