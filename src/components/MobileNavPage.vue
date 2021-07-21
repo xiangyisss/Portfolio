@@ -46,8 +46,10 @@ export default {
       menu.classList.toggle("open");
       if (menu.classList.contains("open")) {
         overlay.style.opacity = 1;
+        overlay.style.visibility = "visible";
       } else {
         overlay.style.opacity = 0;
+        overlay.style.visibility = "hidden";
       }
     },
 
@@ -62,6 +64,7 @@ export default {
       let overlay = document.querySelector(".overlay");
       menu.classList.remove("open");
       overlay.style.opacity = 0;
+      overlay.style.visibility = "hidden";
     },
   },
 };
@@ -90,7 +93,10 @@ export default {
   background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(2px);
   opacity: 0;
+  visibility: hidden;
   transition: opacity 0.2s ease-in;
+
+  /* pointer-events: none; */
 }
 
 .nav_menu {

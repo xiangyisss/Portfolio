@@ -43,6 +43,7 @@ export default {
 }
 .home-page {
   width: 60%;
+  margin-top: 10vh;
   display: flex;
   flex-direction: column;
   justify-content: center;

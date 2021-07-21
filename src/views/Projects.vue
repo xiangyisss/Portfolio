@@ -33,6 +33,7 @@ export default {
 
 .projects-page {
   width: 60%;
+  margin-top: 10vh;
   padding: 1rem;
 }
 

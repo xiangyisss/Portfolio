@@ -70,7 +70,7 @@ export default {
 } */
 
 .square-1 {
-  top: 16%;
+  top: 18%;
   left: 40%;
   /* transform: translateY(-10px) rotate(45deg); */
 }
@@ -87,7 +87,7 @@ export default {
 }
 .square-4 {
   top: 40%;
-  right: 20%;
+  right: 19%;
   /* transform: translateX(-10px) rotate(45deg); */
 }
 

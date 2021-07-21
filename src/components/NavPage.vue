@@ -66,7 +66,7 @@ export default {
   align-items: center;
   padding: 1rem;
   z-index: 1;
-  background-color: #fff;
+  /* background-color: #000; */
 }
 
 a {
@@ -79,8 +79,9 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 40%;
+  width: 30%;
   height: 10vh;
+  margin-right: 18rem;
   /* background-color: yellow; */
 }
 

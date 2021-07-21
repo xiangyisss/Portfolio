@@ -2,7 +2,7 @@
   <div class="about-page">
     <div class="my-info">
       <h1 class="about info">About me</h1>
-      <div class="photo info"></div>
+
       <p class="info-text info">
         Hi, I'm Xiang. I am a frontend developer based in the Netherlands. I
         enjoy turning a simple idea into a beautiful design, to then be a
@@ -11,13 +11,18 @@
         consequatur quis magnam odio repellat officiis vel provident recusandae,
         autem dicta consectetur. Aliquid suscipit quo reprehenderit.
       </p>
+      <div class="skill-part">
+        <h3 class="skill_text info">Skills to focus on</h3>
+        <img src="../assets/Css.svg" class="images" alt="" />
+        <img src="../assets/Html.svg" class="images" alt="" />
+        <img src="../assets/javascript.svg" class="images" alt="" />
+        <img src="../assets/vue.svg" class="images" alt="" />
+        <img src="../assets/github.svg" class="images" alt="" />
+      </div>
     </div>
-    <div class="skill-part">
-      <img src="../assets/Css.svg" class="images" alt="" />
-      <img src="../assets/Html.svg" class="images" alt="" />
-      <img src="../assets/javascript.svg" class="images" alt="" />
-      <img src="../assets/vue.svg" class="images" alt="" />
-      <img src="../assets/github.svg" class="images" alt="" />
+
+    <div class="my_photo">
+      <div class="photo"></div>
     </div>
   </div>
 </template>
@@ -28,6 +33,7 @@ export default {
   mounted() {
     let information = document.querySelectorAll(".info");
     let images = document.querySelectorAll(".images");
+    let photo = document.querySelector(".photo");
     let delay = 0;
     setTimeout(() => {
       information.forEach((info) => {
@@ -42,6 +48,9 @@ export default {
         image.style.opacity = "1";
         image.style.transform = "scale(1)";
         image.style.transitionDelay = delay + "s";
+        photo.style.opacity = "1";
+        photo.style.transform = "scale(1)";
+        photo.style.transitionDelay = delay + "s";
       });
     }, 0);
   },
@@ -58,29 +67,31 @@ export default {
   padding: 1rem;
   display: flex;
   flex-wrap: wrap;
+
   /* background-color: pink; */
 }
 
 .my-info {
   width: 70%;
   padding: 1rem;
-}
-
-.info:not(:last-child) {
   margin-bottom: 2rem;
 }
 
-.skill-part {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 30%;
-}
-.skill-part > * {
-  margin-bottom: 1rem;
+.info {
+  margin-bottom: 2rem;
+  opacity: 0;
+  transform: translateX(3.125rem);
 }
 
+.my_photo {
+  width: 30%;
+  /* padding: 1rem; */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  /* background-color: #fff; */
+}
 .photo {
   width: 10rem;
   height: 10rem;
@@ -89,14 +100,10 @@ export default {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  opacity: 0;
+  transform: scale(0.8);
 }
 
-.photo:hover {
-  filter: none;
-}
-.about {
-  color: #2c3e50;
-}
 .info-text {
   text-align: left;
   font-weight: 500;
@@ -104,15 +111,19 @@ export default {
   line-height: 1.5rem;
 }
 
-.info {
+/* .info {
   opacity: 0;
   transform: translateX(3.125rem);
+} */
+
+.skill_text {
+  margin-bottom: 0.75rem;
 }
 
-.skill-part img {
+img {
   width: 1.5rem;
   height: 1.5rem;
-  display: block;
+  margin-right: 0.75rem;
   opacity: 0;
   transform: scale(0.8);
 }
@@ -125,14 +136,9 @@ export default {
   .my-info {
     width: 100%;
   }
-  .skill-part {
+  .my_photo {
     width: 100%;
-    flex-direction: row;
-    padding: 1.5rem;
-  }
-  .skill-part > * {
-    margin-right: 1rem;
-    margin-bottom: 0;
+    justify-content: center;
   }
 }
 </style>

@@ -75,8 +75,7 @@ export default {
   width: 40%;
   margin-top: 10vh;
   padding: 1rem;
-  /* border-right: 1px solid rgba(255, 255, 255, 0.089);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.089); */
+
   display: flex;
   flex-direction: column;
   align-items: center;
