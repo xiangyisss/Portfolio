@@ -2,9 +2,7 @@
   <nav id="nav">
     <logo class="logo" />
     <div class="nav_button" @click="openMenu">
-      <div class="strick strick_1"></div>
-      <div class="strick strick_2"></div>
-      <div class="strick strick_3"></div>
+      <div class="burger_btn"></div>
     </div>
     <div class="overlay" @click="closeMenu"></div>
     <div class="nav_menu">
@@ -42,6 +40,7 @@ export default {
 
   methods: {
     openMenu() {
+      this.burgerBtn();
       let menu = document.querySelector(".nav_menu");
       let overlay = document.querySelector(".overlay");
       menu.classList.toggle("open");
@@ -52,7 +51,13 @@ export default {
       }
     },
 
+    burgerBtn() {
+      let btn = document.querySelector(".nav_button");
+      btn.classList.toggle("burger_btn_open");
+    },
+
     closeMenu() {
+      this.burgerBtn();
       let menu = document.querySelector(".nav_menu");
       let overlay = document.querySelector(".overlay");
       menu.classList.remove("open");
@@ -94,7 +99,7 @@ export default {
   margin-top: 10vh;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: start;
   align-items: center;
 
   background: #015871;
@@ -110,12 +115,11 @@ export default {
 }
 
 .nav_items {
-  padding: 2rem;
-  background-color: #000;
+  margin: 1.5rem;
   width: 100%;
-  height: 48px;
-  /* height: 48px;
-  text-align: center; */
+  height: 50px;
+  display: grid;
+  place-items: center;
 }
 
 a {
@@ -124,58 +128,58 @@ a {
   /* color: #2c3e50; */
   color: white;
   font-size: 1rem;
+  padding: 1rem;
 }
 
 .nav_button {
   width: 50px;
   height: 50px;
-  /* background-color: black; */
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  background-color: transparent;
+  /* border: 2px solid whitesmoke; */
 }
 
-.strick {
-  width: 28px;
-  height: 2px;
-  background-color: #fff;
-  border-radius: 8px;
-}
-
-.strick:not(:last-child) {
-  margin-bottom: 0.5rem;
-}
-
-/* .active-menu {
-  background-color: black;
-} */
-
-/* .close-menu-button {
-  width: 50px;
-  height: 50px;
-  margin: 0.75rem 0 3rem 0;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-} */
-
-.line {
+.burger_btn {
   width: 30px;
-  height: 3px;
-  background-color: #2c3e50;
+  height: 4px;
+  background-color: whitesmoke;
   border-radius: 4px;
+  transition: all 0.3s ease-in-out;
+}
+
+.burger_btn::before,
+.burger_btn::after {
+  content: "";
+  width: 30px;
+  height: 4px;
+  background-color: whitesmoke;
+  border-radius: 4px;
+  display: block;
   position: absolute;
-  top: 50%;
-  transform: translate(-50%, 0);
+  transition: all 0.3s ease-in-out;
 }
-.line-1 {
-  transform: rotate(45deg);
+
+.burger_btn::before {
+  transform: translateY(-10px);
 }
-.line-2 {
-  transform: rotate(-45deg);
+.burger_btn::after {
+  transform: translateY(10px);
+}
+
+.burger_btn_open .burger_btn {
+  background-color: transparent;
+  transform: translateX(50px);
+}
+.burger_btn_open .burger_btn::before {
+  transform: rotate(45deg) translate(-35px, 35px);
+}
+.burger_btn_open .burger_btn::after {
+  transform: rotate(-45deg) translate(-35px, -35px);
+}
+.active-menu {
+  background-color: rgba(128, 128, 128, 0.24);
 }
 </style>
