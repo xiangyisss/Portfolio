@@ -5,9 +5,6 @@
 </template>
 
 <style scoped>
-/* .button {
-  cursor: pointer;
-} */
 button {
   width: 6.875rem;
   height: 2.75rem;

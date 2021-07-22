@@ -107,7 +107,6 @@ export default {
   flex-direction: column;
   justify-content: start;
   align-items: center;
-
   background: #015871;
   position: fixed;
   top: 0;

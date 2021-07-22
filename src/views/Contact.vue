@@ -7,20 +7,36 @@
       </p>
     </div>
     <form action="" class="contact_info" autocomplete="off">
-      <label for="name">
+      <div class="section">
         <input type="text" name="name" v-model="form.name" required />
-        <span class="content-name">Name</span>
-      </label>
+        <label for="name" class="label_name">
+          <span class="content_name">Name</span>
+        </label>
+      </div>
 
-      <label for="email">
+      <div class="section">
         <input type="email" name="email" v-model="form.email" required />
-        <span class="content-name">Email</span>
-      </label>
+        <label for="email" class="label_name">
+          <span class="content_name">Email</span>
+        </label>
+      </div>
 
-      <label for="message">
+      <div class="section">
+        <input type="text" name="message" v-model="form.message" required />
+        <label for="message" class="label_name">
+          <span class="content_name">Message</span>
+        </label>
+      </div>
+
+      <!-- <label for="email">
+        <input type="email" name="email" v-model="form.email" required />
+        <span class="content_name">Email</span>
+      </label> -->
+
+      <!-- <label for="message">
         <textarea v-model="form.message" name="message" required />
-        <span class="content-name">Message</span>
-      </label>
+        <span class="content_name">Message</span>
+      </label> -->
 
       <BaseButton type="submit" @submit.prevent="sendForm"></BaseButton>
     </form>
@@ -64,9 +80,9 @@ export default {
 </script>
 
 <style scoped>
-* {
+/* * {
   transition: all ease-in 0.3s;
-}
+} */
 .contact_page {
   width: 40%;
   margin-top: 10vh;
@@ -88,45 +104,63 @@ form {
   padding: 1rem;
 }
 
-label {
-  position: relative;
-}
-input,
-textarea {
-  display: block;
+.section {
   width: 100%;
-  height: 3rem;
-  padding: 0px 0 0 8px;
-  outline: none;
-  border: 1px solid rgb(116, 116, 116);
-  border-radius: 4px;
-  margin-bottom: 1.25rem;
+  height: 2.5rem;
   position: relative;
+  margin-bottom: 2rem;
 }
 
-textarea {
-  resize: none;
-  padding: 1.25rem 0 0 0.5rem;
-  height: 5rem !important;
-  font-family: "Roboto", sans-serif;
+input {
+  width: 100%;
+  height: 100%;
+  padding-top: 20px;
+  border: none;
+  outline: none;
 }
 
-input:focus + .content-name,
-textarea:focus + .content-name,
-input:valid + .content-name,
-textarea:valid + .content-name {
-  background-color: white;
-  color: #3994ad;
-  border-radius: 2px;
-  top: -8px;
-  padding: 4px;
+label {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  bottom: 0;
+  pointer-events: none;
+  border-bottom: 1px solid rgb(46, 46, 46);
+  color: grey;
+  font-size: 0.85rem;
+}
+label::after {
+  content: "";
+  width: 5%;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  border-bottom: 2px solid #44a7c3;
+  opacity: 0;
 }
 
-input:focus,
-textarea:focus {
-  border: 1px solid #3994ad;
+input:focus + .label_name::after,
+input:valid + .label_name::after {
+  width: 100%;
+  opacity: 1;
+  transition: width 0.2s ease-in;
+}
+.content_name {
+  position: absolute;
+  bottom: 5px;
+  left: 0;
 }
 
+input:focus + .label_name .content_name,
+input:valid + .label_name .content_name {
+  transform: translateY(-150%);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #44a7c3;
+  transition: all 0.2s ease-in;
+}
 .contact_info {
   opacity: 0;
   transform: scale(0.9);
@@ -137,55 +171,10 @@ textarea:focus {
   font-weight: 500;
 }
 
-span {
-  color: rgb(99, 95, 95);
-  font-size: 0.75rem;
-  padding-left: 0.25rem;
-  position: absolute;
-  top: 1.125rem;
-  left: 0.5rem;
-  pointer-events: none;
-}
-
 .button {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.submit_button {
-  width: 6.875rem;
-  height: 2.75rem;
-  text-align: center;
-  font-size: 1rem;
-  font-weight: 600;
-  border: 2px solid #44a7c3;
-  background-color: transparent;
-  color: #44a7c3;
-  border-radius: 4px;
-  line-height: 2.75rem;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-}
-
-.submit_button::before {
-  content: " ";
-  width: 6.875rem;
-  height: 2.75rem;
-  background-color: #44a8c344;
-  border: none;
-  position: absolute;
-  z-index: -1;
-  left: 0;
-  top: -0.125rem;
-  border-radius: 4px;
-  transform: translateX(-6.875rem);
-}
-
-.submit_button:hover::before {
-  transform: translateX(0%);
-  transition: all 0.2s ease;
 }
 
 @media (max-width: 600px) {

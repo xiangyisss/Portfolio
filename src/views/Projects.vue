@@ -53,8 +53,8 @@ export default {
   padding: 1rem;
 }
 .project {
-  width: 12.5rem;
-  height: 12.5rem;
+  width: 9rem;
+  height: 9rem;
   /* border: 2px solid steelblue; */
   border-radius: 4px;
   cursor: pointer;
@@ -67,7 +67,7 @@ export default {
 
 .project::after {
   content: "Project-Name";
-  width: 12.5rem;
+  width: 9rem;
   height: 1.875rem;
   background-color: rgba(0, 0, 0, 0.356);
   border-bottom-right-radius: 4px;

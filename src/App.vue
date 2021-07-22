@@ -4,6 +4,8 @@
     <!-- <nav-page v-if="!$route.meta.hideNav" /> -->
     <div>
       <nav-page v-if="width > 600" />
+      <!-- <nav-page v-if="!'NotFound'.includes($route.name)" /> -->
+      <!-- <nav-page /> -->
       <mobile-nav-page v-if="width < 600" />
     </div>
     <div class="pages">
