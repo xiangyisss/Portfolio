@@ -2,6 +2,9 @@
   <div class="app">
     <!-- <nav-page v-if="!'NotFound'.includes($route.name)" /> -->
     <!-- <nav-page v-if="!$route.meta.hideNav" /> -->
+    <div class="landing">
+      <landing-page />
+    </div>
     <div>
       <nav-page v-if="width > 600" />
       <!-- <nav-page v-if="!'NotFound'.includes($route.name)" /> -->
@@ -17,9 +20,10 @@
 <script>
 import NavPage from "@/components/NavPage.vue";
 import MobileNavPage from "./components/MobileNavPage.vue";
+import LandingPage from "@/components/LandingPage.vue";
 
 export default {
-  components: { NavPage, MobileNavPage },
+  components: { NavPage, MobileNavPage, LandingPage },
   data() {
     return {
       width: 0,
@@ -29,7 +33,12 @@ export default {
     this.width = window.innerWidth;
     window.addEventListener("resize", this.checkWidth);
   },
-
+  // mounted() {
+  //   let landingPage = document.querySelector(".landing");
+  //   setTimeout(() => {
+  //     landingPage.classList.toggle("close");
+  //   }, 1800);
+  // },
   methods: {
     checkWidth() {
       this.width = window.innerWidth;
@@ -39,6 +48,20 @@ export default {
 </script>
 
 <style>
+.landing {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(193.13deg, #44a7c3 7.05%, #015871 87.55%);
+  position: fixed;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2 ease-in;
+}
+.close {
+  visibility: hidden;
+}
 * {
   box-sizing: border-box;
   padding: 0;

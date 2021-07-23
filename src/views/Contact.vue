@@ -66,6 +66,9 @@ export default {
         message: this.form.message,
       };
       console.log(contactInfo);
+      if (window.confirm("Your message is sended.")) {
+        window.open("Home", "Thanks for visiting!");
+      }
     },
   },
   mounted() {
