@@ -2,9 +2,9 @@
   <div class="app">
     <!-- <nav-page v-if="!'NotFound'.includes($route.name)" /> -->
     <!-- <nav-page v-if="!$route.meta.hideNav" /> -->
-    <div class="landing">
+    <!-- <div class="landing">
       <landing-page />
-    </div>
+    </div> -->
     <div>
       <nav-page v-if="width > 600" />
       <!-- <nav-page v-if="!'NotFound'.includes($route.name)" /> -->
@@ -20,10 +20,10 @@
 <script>
 import NavPage from "@/components/NavPage.vue";
 import MobileNavPage from "./components/MobileNavPage.vue";
-import LandingPage from "@/components/LandingPage.vue";
+// import LandingPage from "@/components/LandingPage.vue";
 
 export default {
-  components: { NavPage, MobileNavPage, LandingPage },
+  components: { NavPage, MobileNavPage },
   data() {
     return {
       width: 0,
@@ -61,6 +61,8 @@ export default {
 }
 .close {
   visibility: hidden;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
 }
 * {
   box-sizing: border-box;

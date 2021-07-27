@@ -1,7 +1,7 @@
 <template>
   <nav id="nav">
-    <logo ref="move" />
-    <div class="nav_menu">
+    <logo ref="move" class="logo_delay" />
+    <div class="nav_menu show_delay">
       <router-link :to="{ name: 'Home' }" class="nav_items" @click="moveLogo">
         Home</router-link
       >
@@ -39,6 +39,23 @@ export default {
   created() {
     this.width = window.innerWidth;
     window.addEventListener("resize", this.checkWidth);
+  },
+  mounted() {
+    // let logoDelay = document.querySelector(".logo_delay");
+    let navItems = document.querySelectorAll(".nav_items");
+    let delay = 0;
+
+    setTimeout(() => {
+      navItems.forEach((item) => {
+        delay += 0.1;
+        // logoDelay.style.opacity = "1";
+        // logoDelay.style.transform = "scale(1)";
+        // logoDelay.style.transform = "translateY(0px)";
+        item.style.opacity = "1";
+        item.style.transform = "translateX(0px)";
+        item.style.transitionDelay = delay + "s";
+      });
+    }, 0);
   },
   methods: {
     moveLogo() {
@@ -92,6 +109,8 @@ a {
   justify-content: start;
   align-items: center;
   position: relative;
+  opacity: 0;
+  transform: translateX(40px);
 }
 
 .nav_items:hover {
@@ -109,4 +128,10 @@ a {
   bottom: 0.125rem;
   left: 0;
 }
+
+/* .logo_delay {
+  opacity: 0;
+  transform: scale(0.8);
+  transform: translateY(-40px);
+} */
 </style>
