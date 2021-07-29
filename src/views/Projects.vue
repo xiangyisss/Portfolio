@@ -12,17 +12,22 @@
 </template>
 
 <script>
+import { onMounted } from "vue";
 export default {
   name: "Projects",
-  mounted() {
-    let items = document.querySelectorAll(".items");
-    setTimeout(() => {
-      items.forEach((item) => {
-        item.style.opacity = "1";
-        item.style.transform = "translate(0)";
-      });
-    }, 0);
+  setup() {
+    onMounted(() => {
+      let items = document.querySelectorAll(".items");
+      setTimeout(() => {
+        items.forEach((item) => {
+          item.style.opacity = "1";
+          item.style.transform = "translate(0)";
+        });
+      }, 0);
+    });
   },
+  // mounted() {
+  // },
 };
 </script>
 

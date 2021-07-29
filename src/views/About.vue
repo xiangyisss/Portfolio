@@ -28,32 +28,37 @@
 </template>
 
 <script>
+import { onMounted } from "vue";
 export default {
   name: "About",
-  mounted() {
-    let information = document.querySelectorAll(".info");
-    let images = document.querySelectorAll(".images");
-    let photo = document.querySelector(".photo");
-    let delay = 0;
-    setTimeout(() => {
-      information.forEach((info) => {
-        delay += 0.1;
-        info.style.opacity = "1";
-        info.style.transform = "translateX(0px)";
-        info.style.transitionDelay = delay + "s";
-      });
+  setup() {
+    onMounted(() => {
+      let information = document.querySelectorAll(".info");
+      let images = document.querySelectorAll(".images");
+      let photo = document.querySelector(".photo");
+      let delay = 0;
+      setTimeout(() => {
+        information.forEach((info) => {
+          delay += 0.1;
+          info.style.opacity = "1";
+          info.style.transform = "translateX(0px)";
+          info.style.transitionDelay = delay + "s";
+        });
 
-      images.forEach((image) => {
-        delay += 0.1;
-        image.style.opacity = "1";
-        image.style.transform = "scale(1)";
-        image.style.transitionDelay = delay + "s";
-        photo.style.opacity = "1";
-        photo.style.transform = "scale(1)";
-        photo.style.transitionDelay = delay + "s";
-      });
-    }, 0);
+        images.forEach((image) => {
+          delay += 0.1;
+          image.style.opacity = "1";
+          image.style.transform = "scale(1)";
+          image.style.transitionDelay = delay + "s";
+          photo.style.opacity = "1";
+          photo.style.transform = "scale(1)";
+          photo.style.transitionDelay = delay + "s";
+        });
+      }, 0);
+    });
   },
+  // mounted() {
+  // },
 };
 </script>
 

@@ -38,9 +38,9 @@ export default {
     Logo,
   },
 
-  methods: {
-    openMenu() {
-      this.burgerBtn();
+  setup() {
+    function openMenu() {
+      burgerBtn();
       let menu = document.querySelector(".nav_menu");
       let overlay = document.querySelector(".overlay");
       menu.classList.toggle("open");
@@ -51,22 +51,58 @@ export default {
         overlay.style.opacity = 0;
         overlay.style.visibility = "hidden";
       }
-    },
+    }
 
-    burgerBtn() {
-      let btn = document.querySelector(".nav_button");
-      btn.classList.toggle("burger_btn_open");
-    },
-
-    closeMenu() {
-      this.burgerBtn();
+    function closeMenu() {
+      burgerBtn();
       let menu = document.querySelector(".nav_menu");
       let overlay = document.querySelector(".overlay");
       menu.classList.remove("open");
       overlay.style.opacity = 0;
       overlay.style.visibility = "hidden";
-    },
+    }
+
+    function burgerBtn() {
+      let btn = document.querySelector(".nav_button");
+      btn.classList.toggle("burger_btn_open");
+    }
+
+    return {
+      openMenu,
+      closeMenu,
+      burgerBtn,
+    };
   },
+
+  // methods: {
+  //   openMenu() {
+  //     this.burgerBtn();
+  //     let menu = document.querySelector(".nav_menu");
+  //     let overlay = document.querySelector(".overlay");
+  //     menu.classList.toggle("open");
+  //     if (menu.classList.contains("open")) {
+  //       overlay.style.opacity = 1;
+  //       overlay.style.visibility = "visible";
+  //     } else {
+  //       overlay.style.opacity = 0;
+  //       overlay.style.visibility = "hidden";
+  //     }
+  //   },
+
+  //   burgerBtn() {
+  //     let btn = document.querySelector(".nav_button");
+  //     btn.classList.toggle("burger_btn_open");
+  //   },
+
+  //   closeMenu() {
+  //     this.burgerBtn();
+  //     let menu = document.querySelector(".nav_menu");
+  //     let overlay = document.querySelector(".overlay");
+  //     menu.classList.remove("open");
+  //     overlay.style.opacity = 0;
+  //     overlay.style.visibility = "hidden";
+  //   },
+  // },
 };
 </script>
 

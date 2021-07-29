@@ -1,6 +1,6 @@
 <template>
   <nav id="nav">
-    <logo ref="move" class="logo_delay" />
+    <logo ref="logo" class="logo_delay" />
     <div class="nav_menu show_delay">
       <router-link :to="{ name: 'Home' }" class="nav_items" @click="moveLogo">
         Home</router-link
@@ -28,43 +28,74 @@
 <script>
 import Logo from "./Logo.vue";
 import Wave from "@/components/Wave.vue";
+import { ref, onMounted } from "vue";
 export default {
   components: { Logo, Wave },
   name: "NavigationPage",
-  data() {
-    return {
-      width: 0,
-    };
-  },
-  created() {
-    this.width = window.innerWidth;
-    window.addEventListener("resize", this.checkWidth);
-  },
-  mounted() {
-    // let logoDelay = document.querySelector(".logo_delay");
-    let navItems = document.querySelectorAll(".nav_items");
-    let delay = 0;
+  setup() {
+    const width = ref(0);
+    width.value = window.innerWidth;
+    window.addEventListener("resize", checkWidth);
 
-    setTimeout(() => {
-      navItems.forEach((item) => {
-        delay += 0.1;
-        // logoDelay.style.opacity = "1";
-        // logoDelay.style.transform = "scale(1)";
-        // logoDelay.style.transform = "translateY(0px)";
-        item.style.opacity = "1";
-        item.style.transform = "translateX(0px)";
-        item.style.transitionDelay = delay + "s";
-      });
-    }, 0);
+    onMounted(() => {
+      let navItems = document.querySelectorAll(".nav_items");
+      let delay = 0;
+
+      setTimeout(() => {
+        navItems.forEach((item) => {
+          delay += 0.1;
+          item.style.opacity = "1";
+          item.style.transform = "translateX(0px)";
+          item.style.transitionDelay = delay + "s";
+        });
+      }, 0);
+    });
+
+    let logo = ref(null);
+
+    function moveLogo() {
+      logo.value.moveBox(2, 2);
+    }
+
+    function checkWidth() {
+      width.value = window.innerWidth;
+    }
+    return { width, moveLogo, checkWidth, logo };
   },
-  methods: {
-    moveLogo() {
-      this.$refs.move.moveBox(2, 2);
-    },
-    checkWidth() {
-      this.width = window.innerWidth;
-    },
-  },
+  // data() {
+  //   return {
+  //     width: 0,
+  //   };
+  // },
+  // created() {
+  //   this.width = window.innerWidth;
+  //   window.addEventListener("resize", this.checkWidth);
+  // },
+  // mounted() {
+  //   // let logoDelay = document.querySelector(".logo_delay");
+  //   let navItems = document.querySelectorAll(".nav_items");
+  //   let delay = 0;
+
+  //   setTimeout(() => {
+  //     navItems.forEach((item) => {
+  //       delay += 0.1;
+  //       // logoDelay.style.opacity = "1";
+  //       // logoDelay.style.transform = "scale(1)";
+  //       // logoDelay.style.transform = "translateY(0px)";
+  //       item.style.opacity = "1";
+  //       item.style.transform = "translateX(0px)";
+  //       item.style.transitionDelay = delay + "s";
+  //     });
+  //   }, 0);
+  // },
+  // methods: {
+  //   moveLogo() {
+  //     this.$refs.move.moveBox(2, 2);
+  //   },
+  //   checkWidth() {
+  //     this.width = window.innerWidth;
+  //   },
+  // },
 };
 </script>
 

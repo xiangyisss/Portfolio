@@ -16,21 +16,36 @@
 
 <script>
 import BaseButton from "@/components/BaseButton.vue";
+import { onMounted } from "vue";
 export default {
   name: "Home",
   components: { BaseButton },
-  mounted() {
-    let items = document.querySelectorAll(".item");
-    let delay = 0;
-    setTimeout(() => {
-      items.forEach((item) => {
-        delay += 0.1;
-        item.style.opacity = 1;
-        item.style.transform = "translate(0px, 0px)";
-        item.style.transitionDelay = delay + "s";
-      });
-    }, 0);
+  setup() {
+    onMounted(() => {
+      let items = document.querySelectorAll(".item");
+      let delay = 0;
+      setTimeout(() => {
+        items.forEach((item) => {
+          delay += 0.1;
+          item.style.opacity = 1;
+          item.style.transform = "translate(0px, 0px)";
+          item.style.transitionDelay = delay + "s";
+        });
+      }, 0);
+    });
   },
+  // mounted() {
+  //   let items = document.querySelectorAll(".item");
+  //   let delay = 0;
+  //   setTimeout(() => {
+  //     items.forEach((item) => {
+  //       delay += 0.1;
+  //       item.style.opacity = 1;
+  //       item.style.transform = "translate(0px, 0px)";
+  //       item.style.transitionDelay = delay + "s";
+  //     });
+  //   }, 0);
+  // },
 };
 </script>
 

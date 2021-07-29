@@ -46,40 +46,68 @@
 
 <script>
 import BaseButton from "@/components/BaseButton.vue";
+import { ref, onMounted } from "vue";
 export default {
   name: "Contact",
   components: { BaseButton },
-  data() {
-    return {
-      form: {
-        name: null,
-        email: null,
-        message: null,
-      },
-    };
-  },
-  methods: {
-    sendForm() {
+  setup() {
+    let form = ref({
+      name: null,
+      email: null,
+      message: null,
+    });
+
+    function sendForm() {
       let contactInfo = {
-        name: this.form.name,
-        email: this.form.email,
-        message: this.form.message,
+        name: form.value.name.value,
+        email: form.value.email.value,
+        message: form.value.message.value,
       };
       console.log(contactInfo);
-      if (window.confirm("Your message is sended.")) {
-        window.open("Home", "Thanks for visiting!");
-      }
-    },
+    }
+
+    onMounted(() => {
+      let contacts = document.querySelectorAll(".contact_info");
+      setTimeout(() => {
+        contacts.forEach((info) => {
+          info.style.opacity = "1";
+          info.style.transform = "scale(1)";
+        });
+      }, 0);
+    });
+    return { form, sendForm };
   },
-  mounted() {
-    let contacts = document.querySelectorAll(".contact_info");
-    setTimeout(() => {
-      contacts.forEach((info) => {
-        info.style.opacity = "1";
-        info.style.transform = "scale(1)";
-      });
-    }, 0);
-  },
+  // data() {
+  //   return {
+  //     form: {
+  //       name: null,
+  //       email: null,
+  //       message: null,
+  //     },
+  //   };
+  // },
+  // methods: {
+  //   sendForm() {
+  //     let contactInfo = {
+  //       name: this.form.name,
+  //       email: this.form.email,
+  //       message: this.form.message,
+  //     };
+  //     console.log(contactInfo);
+  //     if (window.confirm("Your message is sended.")) {
+  //       window.open("Home", "Thanks for visiting!");
+  //     }
+  //   },
+  // },
+  // mounted() {
+  //   let contacts = document.querySelectorAll(".contact_info");
+  //   setTimeout(() => {
+  //     contacts.forEach((info) => {
+  //       info.style.opacity = "1";
+  //       info.style.transform = "scale(1)";
+  //     });
+  //   }, 0);
+  // },
 };
 </script>
 

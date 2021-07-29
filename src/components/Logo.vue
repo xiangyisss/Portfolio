@@ -1,39 +1,78 @@
 <template>
   <div class="logo">
-    <div class="square square_1"></div>
-    <div class="square square_2"></div>
-    <div class="square square_3"></div>
-    <div class="square square_4"></div>
+    <div ref="square1" class="square square_1"></div>
+    <div ref="square2" class="square square_2"></div>
+    <div ref="square3" class="square square_3"></div>
+    <div ref="square4" class="square square_4"></div>
   </div>
 </template>
 
 <script>
+import { ref } from "vue";
 export default {
   name: "Logo",
-  mounted() {
-    this.square1 = document.querySelector(".square_1");
-    this.square2 = document.querySelector(".square_2");
-    this.square3 = document.querySelector(".square_3");
-    this.square4 = document.querySelector(".square_4");
-  },
-  methods: {
-    moveBox(vertical, horizontal) {
-      this.square1.style.transform =
+  setup() {
+    let square1 = ref(null);
+    let square2 = ref(null);
+    let square3 = ref(null);
+    let square4 = ref(null);
+
+    // onMounted(() => {
+    //   square1.value = document.querySelector(".square_1");
+    //   square2.value = document.querySelector(".square_2");
+    //   square3.value = document.querySelector(".square_3");
+    //   square4.value = document.querySelector(".square_4");
+    // });
+
+    function moveBox(vertical, horizontal) {
+      square1.value.style.transform =
         "translateY(-" + vertical + "px)  rotate(45deg)";
-      this.square2.style.transform =
+      square2.value.style.transform =
         "translateY(" + vertical + "px)  rotate(45deg)";
-      this.square3.style.transform =
+      square3.value.style.transform =
         "translateX(" + horizontal + "px)  rotate(45deg)";
-      this.square4.style.transform =
+      square4.value.style.transform =
         "translateX(-" + horizontal + "px)  rotate(45deg)";
       setTimeout(() => {
-        this.square1.style.transform = "translateY(0px)  rotate(45deg)";
-        this.square2.style.transform = "translateY(0px) rotate(45deg)";
-        this.square3.style.transform = "translateX(0px)  rotate(45deg)";
-        this.square4.style.transform = "translateX(0px)  rotate(45deg)";
+        square1.value.style.transform = "translateY(0px)  rotate(45deg)";
+        square2.value.style.transform = "translateY(0px) rotate(45deg)";
+        square3.value.style.transform = "translateX(0px)  rotate(45deg)";
+        square4.value.style.transform = "translateX(0px)  rotate(45deg)";
       }, 300);
-    },
+    }
+
+    return {
+      moveBox,
+      square1,
+      square2,
+      square3,
+      square4,
+    };
   },
+  // mounted() {
+  //   this.square1 = document.querySelector(".square_1");
+  //   this.square2 = document.querySelector(".square_2");
+  //   this.square3 = document.querySelector(".square_3");
+  //   this.square4 = document.querySelector(".square_4");
+  // },
+  // methods: {
+  //   moveBox(vertical, horizontal) {
+  //     this.square1.style.transform =
+  //       "translateY(-" + vertical + "px)  rotate(45deg)";
+  //     this.square2.style.transform =
+  //       "translateY(" + vertical + "px)  rotate(45deg)";
+  //     this.square3.style.transform =
+  //       "translateX(" + horizontal + "px)  rotate(45deg)";
+  //     this.square4.style.transform =
+  //       "translateX(-" + horizontal + "px)  rotate(45deg)";
+  //     setTimeout(() => {
+  //       this.square1.style.transform = "translateY(0px)  rotate(45deg)";
+  //       this.square2.style.transform = "translateY(0px) rotate(45deg)";
+  //       this.square3.style.transform = "translateX(0px)  rotate(45deg)";
+  //       this.square4.style.transform = "translateX(0px)  rotate(45deg)";
+  //     }, 300);
+  //   },
+  // },
 };
 </script>
 
