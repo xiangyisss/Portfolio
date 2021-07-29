@@ -48,7 +48,7 @@ export default {
 </script>
 
 <style>
-.landing {
+/* .landing {
   width: 100%;
   height: 100vh;
   background: linear-gradient(193.13deg, #44a7c3 7.05%, #015871 87.55%);
@@ -58,7 +58,7 @@ export default {
   justify-content: center;
   align-items: center;
   transition: all 0.2 ease-in;
-}
+} */
 .close {
   visibility: hidden;
   opacity: 0;

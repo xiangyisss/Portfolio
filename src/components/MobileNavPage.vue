@@ -76,8 +76,8 @@ export default {
   height: 10vh;
   position: fixed;
   z-index: 1;
-  /* background-color: whitesmoke; */
-  background: linear-gradient(193.13deg, #44a7c3 7.05%, #015871 87.55%);
+  /* background: linear-gradient(193.13deg, #88a0f4 7.05%, #4560be 87.55%); */
+  background-color: #4560be;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -87,16 +87,17 @@ export default {
 .overlay {
   width: 100%;
   height: 90vh;
+  margin-top: 10vh;
   position: fixed;
-  top: 10vh;
+  top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(2px);
+  background-color: rgba(227, 229, 236, 0.5);
+  backdrop-filter: blur(1px);
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.2s ease-in;
 
-  /* pointer-events: none; */
+  transition: opacity 0.2s ease-in;
+  transition: all 0.3s ease-in-out;
 }
 
 .nav_menu {
@@ -107,16 +108,17 @@ export default {
   flex-direction: column;
   justify-content: start;
   align-items: center;
-  background: #015871;
+  background: linear-gradient(293.13deg, #88a0f4 7.05%, #4560be 87.55%);
   position: fixed;
   top: 0;
   right: 0;
-  transform: translateX(100%);
+  transform: translate(100%);
   transition: all 0.2s ease-in;
 }
 
 .open {
-  transform: translateX(0%);
+  transform: translate(0%);
+  /* width: 100%; */
 }
 
 .nav_items {

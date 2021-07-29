@@ -11,8 +11,8 @@ button {
   /* text-align: center; */
   font-size: 1rem;
   font-weight: 600;
-  border: 2px solid #44a7c3;
-  color: #44a7c3;
+  border: 2px solid #4560be;
+  color: #4560be;
   border-radius: 4px;
   position: relative;
   overflow: hidden;

@@ -29,7 +29,7 @@ export default {
         item.style.transform = "translate(0px, 0px)";
         item.style.transitionDelay = delay + "s";
       });
-    }, 400);
+    }, 0);
   },
 };
 </script>

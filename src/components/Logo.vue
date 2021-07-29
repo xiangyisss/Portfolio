@@ -45,7 +45,7 @@ export default {
   width: 3rem;
   height: 3rem;
   border-radius: 100%;
-  background: linear-gradient(193.13deg, #44a7c3 7.05%, #015871 87.55%);
+  background: linear-gradient(193.13deg, #88a0f4 7.05%, #4560be 87.55%);
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
   display: flex;
   justify-content: space-around;

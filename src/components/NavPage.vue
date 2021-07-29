@@ -83,6 +83,7 @@ export default {
   align-items: center;
   padding: 1rem;
   z-index: 1;
+  background-color: #fff;
 }
 
 a {
@@ -104,7 +105,7 @@ a {
   width: 5rem;
   height: 2.5rem;
   font-weight: 500;
-  color: #2c3e50;
+  color: #88a0f4;
   display: flex;
   justify-content: start;
   align-items: center;
@@ -114,7 +115,7 @@ a {
 }
 
 .nav_items:hover {
-  color: #44a7c3;
+  color: #4560be;
   padding-left: 0.25rem;
   transition: all 0.3s;
 }
@@ -123,7 +124,7 @@ a {
   content: "";
   width: 1.25rem;
   height: 0.125rem;
-  background-color: #44a7c3;
+  background-color: #4560be;
   position: absolute;
   bottom: 0.125rem;
   left: 0;

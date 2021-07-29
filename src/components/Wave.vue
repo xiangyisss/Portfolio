@@ -16,8 +16,9 @@
 }
 
 .line {
-  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg)
-    repeat-x;
+  /* background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg)
+    repeat-x; */
+  background: url("../assets/wave-gradient.svg") repeat-x;
   position: absolute;
   top: -118px;
   width: 3000vw;
