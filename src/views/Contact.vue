@@ -6,7 +6,12 @@
         Feel free to contact me, I will get back to you as soon as possible.
       </p>
     </div>
-    <form action="" class="contact_info" autocomplete="off">
+    <form
+      action=""
+      class="contact_info"
+      autocomplete="off"
+      @submit.prevent="sendForm"
+    >
       <div class="input_box">
         <input
           type="text"
@@ -39,7 +44,7 @@
         <label for="message"> Message </label>
       </div>
 
-      <BaseButton type="submit" @submit.prevent="sendForm"></BaseButton>
+      <BaseButton type="submit"></BaseButton>
     </form>
   </div>
 </template>
@@ -47,23 +52,22 @@
 <script>
 import BaseButton from "@/components/BaseButton.vue";
 import { ref, onMounted } from "vue";
+import axios from "axios";
 export default {
   name: "Contact",
   components: { BaseButton },
   setup() {
-    let form = ref({
-      name: null,
-      email: null,
-      message: null,
+    const form = ref({
+      name: "",
+      email: "",
+      message: "",
     });
 
     function sendForm() {
-      let contactInfo = {
-        name: form.value.name.value,
-        email: form.value.email.value,
-        message: form.value.message.value,
-      };
-      console.log(contactInfo);
+      axios
+        .post("https://myproject.form.io/form", form.value)
+        .then((res) => console.log(res))
+        .catch();
     }
 
     onMounted(() => {
